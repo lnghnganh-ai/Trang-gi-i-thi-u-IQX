@@ -796,6 +796,84 @@ table.board{width:100%; border-collapse:collapse; font-size:14px; font-variant-n
 .cta-light .cta-mascot{top:auto; bottom:0; width:clamp(160px, 24vw, 320px); filter:drop-shadow(0 20px 24px oklch(27% .08 256 / .3))}
 @media (max-width:760px){ .cta-light::before{background:color-mix(in oklab, var(--bg) 82%, transparent)} }
 @media (prefers-reduced-motion: reduce){ .float{animation:none} }
+
+/* ============ 06 Bot Trading ============ */
+.bot-presets{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:20px; font-size:14px; color:var(--fg-2)}
+.preset{min-height:42px; padding:0 18px; border-radius:999px; border:1px solid var(--line); background:var(--surface); color:var(--fg); font:600 14px var(--font-body); cursor:pointer; transition:background .2s, border-color .2s, color .2s}
+.preset:hover{border-color:var(--primary); color:var(--primary)}
+.preset[aria-pressed="true"]{background:var(--primary); border-color:var(--primary); color:var(--primary-ink)}
+.bot-grid{display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:24px; padding:32px; border-radius:24px; background:
+  radial-gradient(circle at 10% 10%, color-mix(in oklab, var(--cyan) 38%, transparent), transparent 50%),
+  radial-gradient(circle at 92% 90%, color-mix(in oklab, var(--violet) 22%, transparent), transparent 55%),
+  linear-gradient(135deg, color-mix(in oklab, var(--primary) 20%, var(--surface)), color-mix(in oklab, var(--cyan) 16%, var(--surface)))}
+.bot-card{position:relative; min-width:0; background:var(--surface); border-radius:18px; box-shadow:var(--lift); padding:22px}
+.bc-h{display:flex; align-items:center; gap:12px; margin-bottom:16px}
+.bc-h b{display:block; font:700 17px/1.25 var(--font-head)}
+.bc-h small{display:block; font-size:12.5px; color:var(--fg-2)}
+.bc-h .demo-tag{margin-left:auto}
+.bot-ava{flex:none; width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--primary); color:var(--primary-ink)}
+.live{margin-left:auto; display:inline-flex; align-items:center; gap:6px; padding:4px 10px; border-radius:999px; font-size:12.5px; font-weight:700; color:var(--up); background:color-mix(in oklab, var(--up) 12%, var(--surface)); white-space:nowrap}
+.live i{width:7px; height:7px; border-radius:50%; background:var(--up); box-shadow:0 0 0 0 color-mix(in oklab, var(--up) 50%, transparent); animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 7px transparent} 100%{box-shadow:0 0 0 0 transparent}}
+.field{padding:14px 0; border-top:1px solid var(--line)}
+.flabel{display:block; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--fg-2); margin-bottom:10px}
+.flabel.buy{color:var(--up)} .flabel.sell{color:var(--down)}
+.seg{display:inline-flex; flex-wrap:wrap; gap:4px; padding:4px; border-radius:10px; background:var(--muted)}
+.seg span{padding:6px 12px; border-radius:7px; font-size:13.5px; font-weight:600; color:var(--fg-2)}
+.seg .on{background:var(--surface); color:var(--fg); box-shadow:var(--shadow)}
+.hint{font-size:12.5px; color:var(--fg-2); margin-top:8px}
+.conds{display:flex; flex-wrap:wrap; align-items:center; gap:8px}
+.cond{display:inline-flex; align-items:center; gap:6px; padding:8px 12px; border-radius:10px; background:var(--surface-2); border:1px solid var(--line); font:600 14px var(--font-head); font-variant-numeric:tabular-nums}
+.cond .op{color:var(--primary)}
+.join{font-size:11.5px; font-weight:800; letter-spacing:.08em; color:var(--fg-2)}
+.bot-foot{display:flex; flex-direction:column; gap:8px; padding-top:14px; padding-right:96px; border-top:1px solid var(--line); font-size:13px; color:var(--fg-2)}
+.bot-foot span{display:inline-flex; align-items:center; gap:8px}
+.bot-foot .icon{width:16px; height:16px; color:var(--primary)}
+.bot-mascot{position:absolute; right:-14px; bottom:-18px; width:118px; height:auto; filter:drop-shadow(0 12px 14px oklch(27% .08 256 / .25))}
+.result{padding-bottom:30px}
+.kpis{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:8px}
+.kpi{padding:10px 12px; border-radius:12px; background:var(--surface-2); border:1px solid var(--line)}
+.kpi small{display:block; font-size:12px; color:var(--fg-2)}
+.kpi b{display:block; font:700 20px/1.2 var(--font-head); font-variant-numeric:tabular-nums; margin-top:2px}
+.kpi b.u{color:var(--up)} .kpi b.d{color:var(--down)}
+.bot-chart{display:block; width:100%; height:auto; margin-top:14px}
+.bot-chart .gl{stroke:var(--line); stroke-dasharray:2 4}
+.bot-chart .gz{stroke:var(--fg-2); stroke-opacity:.5}
+.bot-chart .gt{fill:var(--fg-2); font:11px var(--font-body)}
+.bot-chart .ln-bh{fill:none; stroke:var(--fg-2); stroke-width:1.6; stroke-dasharray:5 4; opacity:.75}
+.bot-chart .ln-bot{fill:none; stroke:var(--primary); stroke-width:2.4; stroke-linejoin:round}
+.bot-chart .mk-b{fill:var(--up); stroke:var(--surface); stroke-width:1.5}
+.bot-chart .mk-s{fill:var(--down); stroke:var(--surface); stroke-width:1.5}
+.legend{display:flex; flex-wrap:wrap; gap:6px 16px; margin-top:6px; font-size:12.5px; color:var(--fg-2)}
+.legend span{display:inline-flex; align-items:center; gap:6px}
+.legend i{display:inline-block; width:16px; height:3px; border-radius:2px}
+.legend .l-bot{background:var(--primary)} .legend .l-bh{background:var(--fg-2)}
+.legend .l-dot{width:9px; height:9px; border-radius:50%} .legend .l-buy{background:var(--up)} .legend .l-sell{background:var(--down)}
+.toast{position:absolute; right:-18px; bottom:-26px; display:flex; align-items:center; gap:10px; padding:10px 14px 10px 10px; background:var(--surface); border:1px solid var(--line); border-radius:14px; box-shadow:var(--lift); animation:bob 6s ease-in-out infinite}
+.toast .ti{width:36px; height:36px; border-radius:10px; display:grid; place-items:center; background:var(--gold-soft); color:var(--gold)}
+.toast b{display:block; font-size:13.5px}
+.toast small{display:block; font-size:12px; color:var(--fg-2)}
+.bot-steps{list-style:none; counter-reset:bs; margin:48px 0 0; padding:0; display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:20px}
+.bot-steps li{counter-increment:bs; display:grid; gap:4px; padding-top:16px; border-top:2px solid var(--line)}
+.bot-steps li:first-child{border-top-color:var(--primary)}
+.bot-steps li::before{content:"0" counter(bs); font:700 13px var(--font-head); color:var(--primary)}
+.bot-steps b{font:700 18px/1.3 var(--font-head)}
+.bot-steps span{font-size:14.5px; color:var(--fg-2)}
+.bot-note{display:flex; align-items:flex-start; gap:10px; margin-top:28px; max-width:80ch; font-size:14px; color:var(--fg-2)}
+.bot-note .icon{color:var(--primary); margin-top:1px}
+@media (max-width:920px){
+  .bot-grid{grid-template-columns:1fr; padding:16px; gap:16px}
+  .toast{position:relative; left:auto; bottom:auto; margin-top:14px; width:fit-content; max-width:100%; animation:none}
+  .result{padding-bottom:22px}
+  .bot-steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  .kpis{grid-template-columns:1fr 1fr}
+  .bot-steps{grid-template-columns:1fr}
+  .bot-mascot{width:92px}
+  .bot-foot{padding-right:76px}
+}
+@media (prefers-reduced-motion: reduce){ .toast, .live i{animation:none} }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -832,7 +910,7 @@ table.board{width:100%; border-collapse:collapse; font-size:14px; font-variant-n
       <a href="#cau-chuyen">Câu chuyện</a>
       <a href="#san-pham">Sản phẩm</a>
       <a href="#flashback">Flashback</a>
-      <a href="#lo-trinh">Lộ trình</a>
+      <a href="#bot-trading">Bot Trading</a>
       <a href="#ve-iqx">Về IQX</a>
     </nav>
     <div class="hdr-cta">
@@ -844,7 +922,7 @@ table.board{width:100%; border-collapse:collapse; font-size:14px; font-variant-n
     <a href="#cau-chuyen">Câu chuyện</a>
     <a href="#san-pham">Sản phẩm</a>
     <a href="#flashback">Flashback</a>
-    <a href="#lo-trinh">Lộ trình</a>
+    <a href="#bot-trading">Bot Trading</a>
     <a href="#thi-truong">Thị trường</a>
     <a href="#ve-iqx">Về IQX</a>
   </nav>
@@ -900,7 +978,7 @@ table.board{width:100%; border-collapse:collapse; font-size:14px; font-variant-n
       <div><b>38</b><span>chỉ báo kỹ thuật</span></div>
       <div><b>97</b><span>bài trong Học viện</span></div>
       <div><b>5</b><span>khóa tài chính định lượng</span></div>
-      <div><b>7</b><span>cấp rèn luyện</span></div>
+      <div><b>5</b><span>linh thú đồng hành</span></div>
       <div><b>100tr</b><span>vốn mô phỏng mặc định</span></div>
     </div>
 
@@ -981,7 +1059,7 @@ table.board{width:100%; border-collapse:collapse; font-size:14px; font-variant-n
         <ul class="bento">
           <li class="bc wide c-blue"><span class="bi"><svg class="icon"><use href="#i-shield"/></svg></span><h4>Sai ở sân tập, để đúng ở thị trường.</h4><p>Vốn ảo và dữ liệu lịch sử thật cho phép bạn thử, thua và thử lại mà không mất đồng nào.</p><img src="assets/bach-ho.webp" alt="" loading="lazy"></li>
           <li class="bc c-gold"><span class="bi"><svg class="icon"><use href="#i-coins"/></svg></span><h4>Kiến thức là vốn.</h4><p>1 bài học = 100 xu = 1.000.000đ vốn luyện tập.</p><img src="assets/kim-quy.webp" alt="" loading="lazy"></li>
-          <li class="bc c-green"><span class="bi"><svg class="icon"><use href="#i-target"/></svg></span><h4>Kỷ luật đi trước lợi nhuận.</h4><p>7 cấp rèn từng thói quen: kế hoạch, cắt lỗ, quản lý vốn.</p><img src="assets/loc-huou.webp" alt="" loading="lazy"></li>
+          <li class="bc c-green"><span class="bi"><svg class="icon"><use href="#i-target"/></svg></span><h4>Kỷ luật đi trước lợi nhuận.</h4><p>Kế hoạch, cắt lỗ, quản lý vốn. Bot giữ kỷ luật thay bạn.</p><img src="assets/loc-huou.webp" alt="" loading="lazy"></li>
           <li class="bc c-sky"><span class="bi"><svg class="icon"><use href="#i-sigma"/></svg></span><h4>Đi đến tận gốc định lượng.</h4><p>Backtest, xác suất, chuỗi thời gian, tối ưu danh mục.</p><img src="assets/thanh-long.webp" alt="" loading="lazy"></li>
           <li class="bc c-rose"><span class="bi"><svg class="icon"><use href="#i-users"/></svg></span><h4>Học cùng nhau thì đi xa hơn.</h4><p>Phòng Flashback, Khu giao dịch và SACO nhận định.</p><img src="assets/phung-hoang.webp" alt="" loading="lazy"></li>
         </ul>
@@ -1092,22 +1170,63 @@ table.board{width:100%; border-collapse:collapse; font-size:14px; font-variant-n
   </div>
 </section>
 
-<!-- JOURNEY -->
-<section class="sec" id="lo-trinh">
+<!-- BOT TRADING -->
+<section class="sec" id="bot-trading">
   <div class="wrap">
     <header class="chead">
-      <div class="ch-label"><span class="ch-num">06</span><span class="ch-name">Lộ trình</span></div>
-      <div><h2>Từ lệnh đầu tiên đến tư duy của bậc thầy</h2><p>Bảy cấp, mỗi cấp gắn với một kỹ năng và các nhiệm vụ thực hành cụ thể trong Demo Trading. Chọn một trạm trên tuyến để xem bạn sẽ làm gì.</p></div>
+      <div class="ch-label"><span class="ch-num">06</span><span class="ch-name">Bot Trading</span></div>
+      <div><span class="eyebrow">Sản phẩm nổi bật</span><h2 style="margin-top:14px">Biến kiến thức thành một <span class="grad">Bot giao dịch kỷ luật</span>.</h2><p>Chọn chỉ báo bạn đã học, đặt điều kiện Mua và Bán, kiểm thử bằng Backtest rồi để Bot tự vận hành bằng vốn ảo từ phiên kế tiếp. Không cảm xúc, không bỏ lỡ tín hiệu.</p></div>
     </header>
-    <div class="levels" id="levels" role="group" aria-label="Chọn cấp"></div>
-    <div class="lv-detail" id="lvDetail" aria-live="polite"></div>
 
-    <div class="sec-head" style="margin:56px 0 0">
-      <span class="eyebrow">Năm linh thú, năm lăng kính</span>
-      <h3 style="font-size:24px">Linh thú của bạn được xác định từ cách bạn đọc thị trường</h3>
-      <p>Học xong Cấp 6, bạn mở khóa linh thú của riêng mình. Mỗi linh thú phản ánh lớp thông tin bạn dựa vào nhiều nhất khi ra quyết định.</p>
+    <div class="bot-presets" role="group" aria-label="Chọn chiến lược mẫu">
+      <span>Thử chiến lược mẫu:</span>
+      <button type="button" class="preset" aria-pressed="true" data-s="ma">Theo xu hướng MA</button>
+      <button type="button" class="preset" aria-pressed="false" data-s="rsi">Đảo chiều RSI</button>
     </div>
-    <div class="lenses" id="lenses"></div>
+
+    <div class="bot-grid">
+      <div class="bot-card builder">
+        <div class="bc-h">
+          <span class="bot-ava"><svg class="icon"><use href="#i-bot"/></svg></span>
+          <div><b>Bot của bạn</b><small id="botName">Theo xu hướng MA</small></div>
+          <span class="live"><i></i>Đang chạy</span>
+        </div>
+        <div class="field">
+          <span class="flabel">Nguồn mua</span>
+          <div class="seg"><span class="on">VN30</span><span>Danh mục từ Bộ lọc</span></div>
+          <p class="hint">Mua mới chỉ trong danh mục này. Vị thế đang giữ vẫn được xét theo điều kiện Bán.</p>
+        </div>
+        <div class="field"><span class="flabel buy">Điều kiện Mua</span><div class="conds" id="condBuy"></div></div>
+        <div class="field"><span class="flabel sell">Điều kiện Bán</span><div class="conds" id="condSell"></div></div>
+        <div class="bot-foot">
+          <span><svg class="icon"><use href="#i-cal"/></svg>Hiệu lực từ phiên kế tiếp</span>
+          <span><svg class="icon"><use href="#i-chart"/></svg>Dùng chung cấu hình với Backtest</span>
+        </div>
+        <img class="bot-mascot" src="assets/bach-ho.webp" alt="" loading="lazy">
+      </div>
+
+      <div class="bot-card result">
+        <div class="bc-h">
+          <div><b>Kết quả Backtest</b><small>Mô phỏng 2 năm trên dữ liệu minh họa</small></div>
+          <span class="demo-tag">Minh họa</span>
+        </div>
+        <div class="kpis" id="botKpis" aria-live="polite"></div>
+        <svg id="botChart" class="bot-chart" viewBox="0 0 600 240" role="img" aria-label="So sánh lợi nhuận của Bot với chiến lược Mua và giữ"></svg>
+        <div class="legend"><span><i class="l-bot"></i>Bot</span><span><i class="l-bh"></i>Mua và giữ</span><span><i class="l-dot l-buy"></i>Lệnh mua</span><span><i class="l-dot l-sell"></i>Lệnh bán</span></div>
+        <div class="toast" aria-hidden="true">
+          <span class="ti"><svg class="icon"><use href="#i-bell"/></svg></span>
+          <span><b>Cảnh báo Telegram</b><small id="toastTxt">HPG: MA(20) cắt lên MA(50)</small></span>
+        </div>
+      </div>
+    </div>
+
+    <ol class="bot-steps">
+      <li><b>Chọn chỉ báo</b><span>Lấy từ thư viện 38 chỉ báo. Điều kiện Mua và Bán cấu hình độc lập.</span></li>
+      <li><b>Chọn nguồn mua</b><span>Rổ VN30 theo từng phiên, hoặc danh mục bạn lưu từ Bộ lọc.</span></li>
+      <li><b>Backtest</b><span>So kết quả với chiến lược Mua và giữ, xem lịch sử từng lệnh.</span></li>
+      <li><b>Bot vận hành</b><span>Áp dụng từ phiên kế tiếp trên tài khoản Bot riêng, bằng vốn ảo.</span></li>
+    </ol>
+    <p class="bot-note"><svg class="icon"><use href="#i-shield"/></svg>Công bằng cho mọi người: linh thú và tiến hóa chỉ thay đổi hình ảnh, không cho lợi thế giao dịch nào trong Bot, Demo Trading hay Flashback.</p>
   </div>
 </section>
 
@@ -1145,7 +1264,7 @@ table.board{width:100%; border-collapse:collapse; font-size:14px; font-variant-n
       <div><h2>Một nơi cho cả kiến thức, trải nghiệm và cộng đồng</h2><p>Bắt đầu miễn phí với toàn bộ nền tảng học và chơi. Premium dành cho người muốn đi sâu vào công cụ và phân tích.</p></div>
     </header>
     <div class="why">
-      <div><b>Học có lộ trình</b><p>97 bài theo chương, 7 cấp kỹ năng và bài thi đai. Biết mình đang ở đâu và cần làm gì tiếp.</p></div>
+      <div><b>Học có lộ trình</b><p>97 bài theo chương và bài thi lên đai ở Candle Dojo. Biết mình đang ở đâu và cần học gì tiếp.</p></div>
       <div><b>Trải nghiệm không rủi ro</b><p>Vốn ảo và dữ liệu lịch sử thật. Sai ở đây để không sai khi dùng tiền thật.</p></div>
       <div><b>Đến tận định lượng</b><p>Backtest, bộ lọc, cảnh báo và 5 khóa quant miễn phí, từ xác suất đến tối ưu danh mục.</p></div>
       <div><b>Có bạn đồng hành</b><p>Phòng Flashback, Khu giao dịch, nhận định từ SACO và trợ lý AI trả lời khi bạn bí.</p></div>
@@ -1254,7 +1373,7 @@ table.board{width:100%; border-collapse:collapse; font-size:14px; font-variant-n
       <nav aria-label="Khám phá">
         <h3>Khám phá</h3>
         <a href="#cau-chuyen">Câu chuyện</a>
-        <a href="#lo-trinh">Lộ trình 7 cấp</a>
+        <a href="#bot-trading">Bot Trading</a>
         <a href="https://iqx.vn/bai-hoc" target="_blank" rel="noopener">Kiến thức định lượng</a>
         <a href="https://iqx.vn/khu-giao-dich" target="_blank" rel="noopener">Khu giao dịch</a>
         <a href="#ve-iqx">Về IQX</a>
@@ -1319,7 +1438,6 @@ const MASCOTS = [
   {id:'phung-hoang', acc:'oklch(66% .19 30)', name:'Phụng Hoàng', layer:'Tin tức', desc:'Nối tin tức và sự kiện với phản ứng giá.'},
   {id:'kim-quy', acc:'oklch(66% .15 150)', name:'Kim Quy', layer:'Định giá', desc:'Kiên nhẫn mua doanh nghiệp tốt ở giá hợp lý.'}
 ];
-$('#lenses').innerHTML = MASCOTS.map(m => `<div class="lens" style="--acc:${m.acc}"><img src="assets/${m.id}.webp" alt="${m.name}" loading="lazy" width="130" height="130"><b>${m.name}</b><span class="layer">${m.layer}</span><p>${m.desc}</p></div>`).join('');
 
 /* ---------- Products (thêm sản phẩm mới: thêm một mục vào items) ---------- */
 const GROUPS = [
@@ -1342,7 +1460,7 @@ const GROUPS = [
     lede:'Môi trường giao dịch mô phỏng đầy đủ với dữ liệu của HOSE, HNX và UPCOM, cùng công cụ để kiểm chứng ý tưởng trước khi dùng.',
     items:[
       {icon:'candle', name:'Demo Trading', desc:'Bảng giá, biểu đồ nến, tuyến tính, log và %, 38 chỉ báo kỹ thuật, công cụ vẽ, đặt lệnh giới hạn theo lô 100. Theo dõi danh mục và lãi lỗ.', chips:['3 sàn','38 chỉ báo','Vốn mặc định 100tr'], href:'https://iqx.vn/demo-trading?view=trading'},
-      {icon:'bot', name:'Bot', desc:'Tự thiết lập điều kiện mua bán cho Bot từ chỉ báo bạn đã học, rồi quan sát Bot thực hành với vốn ảo và nguyên tắc rõ ràng.', chips:['Điều kiện tùy chỉnh','Vốn ảo'], href:'https://iqx.vn/demo-trading?view=bot'},
+      {icon:'bot', name:'Bot', desc:'Tự thiết lập điều kiện mua bán cho Bot từ chỉ báo bạn đã học, rồi quan sát Bot thực hành với vốn ảo và nguyên tắc rõ ràng.', chips:['Điều kiện tùy chỉnh','Vốn ảo'], href:'#bot-trading'},
       {icon:'target', name:'Chiến lược', desc:'Cảnh báo tín hiệu, Backtest để kiểm thử chiến lược trên dữ liệu quá khứ và Bộ lọc để sàng lọc doanh nghiệp.', chips:['Cảnh báo','Backtest','Bộ lọc'], href:'https://iqx.vn/chien-luoc'},
       {icon:'spark', name:'Phân tích AI', desc:'Bản tin thị trường hằng ngày, nhận định cổ phiếu và giải thích báo cáo tài chính bằng ngôn ngữ dễ hiểu, hỗ trợ bởi Claude.', chips:['Bản tin cuối phiên','Báo cáo tài chính'], href:'https://iqx.vn/about'}
     ], preview:'thuc-hanh'},
@@ -1436,26 +1554,65 @@ tabsEl.addEventListener('keydown', e => {
 document.querySelectorAll('[data-tab]').forEach(a => a.addEventListener('click', () => selectTab(a.dataset.tab)));
 try{ const saved = localStorage.getItem('iqx-tab'); if (saved && GROUPS.some(g=>g.id===saved)) selectTab(saved); }catch(e){}
 
-/* ---------- Journey ---------- */
-const LEVELS = [
-  {name:'Nhập môn', skill:'Làm quen với một vòng mua, theo dõi và bán cổ phiếu.', tasks:['Đặt lệnh đầu tiên, nắm giữ và theo dõi','Bán và hoàn thành kết sổ đầu tiên']},
-  {name:'Học việc', skill:'Mỗi quyết định mua đều bắt đầu từ một kế hoạch.', tasks:['Lệnh đầu tiên có kế hoạch','Trải nghiệm đủ 4 lý do mua','3 lệnh được AI ủng hộ','10 lệnh thực chiến']},
-  {name:'Kỷ luật', skill:'Xác định cắt lỗ và chốt lời trước khi đặt lệnh.', tasks:['10 lệnh có cắt lỗ và chốt lời']},
-  {name:'Bản lĩnh', skill:'Phân bổ vốn theo khẩu vị rủi ro và mức độ tự tin.', tasks:['Thực hành quản lý vốn qua 10 lệnh','Trải nghiệm đủ 3 mức tự tin']},
-  {name:'Thuần thục', skill:'Đọc đủ bốn lớp thông tin trước khi quyết định.', tasks:['10 lệnh đọc đủ 4 lớp: kỹ thuật, dòng tiền, nội bộ, tin tức']},
-  {name:'Lão luyện', skill:'Chủ động tìm cơ hội và theo dõi trước khi mua.', tasks:['Săn 10 mã vào danh sách theo dõi','Mua 5 mã từ danh sách đã săn']},
-  {name:'Bậc thầy', skill:'Nhận diện mâu thuẫn và hành động nhất quán.', tasks:['3 lần xử lý mâu thuẫn nhất quán','Tốt nghiệp và mở khóa linh thú của riêng bạn']}
-];
-const lvEl = $('#levels'), lvD = $('#lvDetail');
-lvEl.innerHTML = LEVELS.map((l,i)=>`<button type="button" class="lv" aria-pressed="${i===0}" data-i="${i}"><small>Cấp ${i}</small><b>${l.name}</b></button>`).join('');
-function showLevel(i){
-  lvEl.querySelectorAll('.lv').forEach(b=>b.setAttribute('aria-pressed', String(+b.dataset.i===i)));
-  const l = LEVELS[i], m = MASCOTS[i % MASCOTS.length];
-  lvD.innerHTML = `<div><span class="eyebrow">Cấp ${i} · ${l.name}</span><h3 style="margin-top:8px">${l.skill}</h3><ul>${l.tasks.map(t=>`<li>${ic('check')}${t}</li>`).join('')}</ul></div>
-    <div class="egg"><img src="assets/${i===6?'thanh-long':m.id}.webp" alt="" loading="lazy">${i===6?'Mở khóa linh thú':'Đồng hành cùng bạn'}</div>`;
-}
-lvEl.addEventListener('click', e => { const b=e.target.closest('.lv'); if(b) showLevel(+b.dataset.i); });
-showLevel(0);
+/* ---------- Bot Trading (backtest minh họa) ---------- */
+(function(){
+  let bs = 2024; const br = () => (bs = (bs*16807)%2147483647)/2147483647;
+  const NB = 500, P = [100]; let drift = 0;
+  for (let i=1;i<NB;i++){ if (i%70===1) drift = (br()-0.42)*0.0045; P.push(P[i-1]*(1 + drift + (br()-0.5)*0.032)); }
+  const sma = (i,n) => { let a=0; for (let k=i-n+1;k<=i;k++) a+=P[k]; return a/n; };
+  const RSI = [50]; { let g=0, l=0; for (let i=1;i<NB;i++){ const d=P[i]-P[i-1], u=Math.max(d,0), w=Math.max(-d,0);
+    if (i<=14){ g+=u/14; l+=w/14; } else { g=(g*13+u)/14; l=(l*13+w)/14; } RSI[i] = i>=14 ? 100-100/(1+g/(l||1e-9)) : 50; } }
+  const STR = {
+    rsi:{ name:'Đảo chiều RSI', toast:'FPT: RSI(14) xuống dưới 30',
+      buy:[['RSI(14)','<','30']], sell:[['RSI(14)','>','70'],'HOẶC',['Lỗ','>','8%']],
+      entry:(i)=> RSI[i] < 30, exit:(i,ep)=> RSI[i] > 70 || P[i] < ep*0.92 },
+    ma:{ name:'Theo xu hướng MA', toast:'HPG: MA(20) cắt lên MA(50)',
+      buy:[['MA(20)','cắt lên','MA(50)']], sell:[['MA(20)','cắt xuống','MA(50)'],'HOẶC',['Lỗ','>','8%']],
+      entry:(i)=> sma(i-1,20) <= sma(i-1,50) && sma(i,20) > sma(i,50),
+      exit:(i,ep)=> (sma(i-1,20) >= sma(i-1,50) && sma(i,20) < sma(i,50)) || P[i] < ep*0.92 }
+  };
+  const S0 = 60;
+  function run(st){
+    let cash=100, sh=0, ep=0; const eq=[], bh=[], marks=[], trades=[];
+    for (let i=S0;i<NB;i++){
+      if (!sh && st.entry(i)){ sh=cash/P[i]; cash=0; ep=P[i]; marks.push([i,'b']); }
+      else if (sh && st.exit(i,ep)){ cash=sh*P[i]; sh=0; trades.push(P[i]/ep-1); marks.push([i,'s']); }
+      eq.push((cash+sh*P[i]) - 100); bh.push((P[i]/P[S0]-1)*100);
+    }
+    return {eq, bh, marks, trades};
+  }
+  const cond = c => typeof c === 'string' ? `<span class="join">${c}</span>` : `<span class="cond">${c[0]} <span class="op">${c[1]}</span> ${c[2]}</span>`;
+  const pct = v => `${v>0?'+':''}${fmt(v,1)}%`;
+  function render(key){
+    const st = STR[key], r = run(st);
+    $('#botName').textContent = st.name;
+    $('#condBuy').innerHTML = st.buy.map(cond).join('');
+    $('#condSell').innerHTML = st.sell.map(cond).join('');
+    $('#toastTxt').textContent = st.toast;
+    const botR = r.eq[r.eq.length-1], bhR = r.bh[r.bh.length-1];
+    const wins = r.trades.filter(t=>t>0).length, n = r.trades.length;
+    $('#botKpis').innerHTML = [
+      ['Lợi nhuận Bot', pct(botR), botR>=0?'u':'d'], ['Mua và giữ', pct(bhR), bhR>=0?'u':'d'],
+      ['Lệnh đã đóng', fmt(n), ''], ['Tỷ lệ thắng', n ? fmt(wins/n*100,0)+'%' : '–', '']
+    ].map(k=>`<div class="kpi"><small>${k[0]}</small><b class="${k[2]}">${k[1]}</b></div>`).join('');
+    const W=600, H=240, L=44, R=10, T=12, B=22, all=[...r.eq, ...r.bh];
+    const lo = Math.floor(Math.min(...all)/10)*10, hi = Math.ceil(Math.max(...all)/10)*10;
+    const x = i => L + i*(W-L-R)/(r.eq.length-1), y = v => T + (hi-v)/(hi-lo)*(H-T-B);
+    const step = (hi-lo) > 80 ? 40 : 20;
+    let g = '';
+    for (let v=Math.ceil(lo/step)*step; v<=hi; v+=step){
+      g += `<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" class="${v===0?'gz':'gl'}"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end" class="gt">${v>0?'+':''}${v}%</text>`;
+    }
+    const path = arr => arr.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)).join(' ');
+    g += `<path d="${path(r.bh)}" class="ln-bh"/><path d="${path(r.eq)}" class="ln-bot"/>`;
+    r.marks.forEach(([i,t])=>{ const k=i-S0; g += `<circle cx="${x(k).toFixed(1)}" cy="${y(r.eq[k]).toFixed(1)}" r="3.6" class="${t==='b'?'mk-b':'mk-s'}"/>`; });
+    g += `<text x="${L}" y="${H-4}" class="gt">Năm 1</text><text x="${W-R}" y="${H-4}" text-anchor="end" class="gt">Năm 2</text>`;
+    $('#botChart').innerHTML = g;
+  }
+  const presets = document.querySelectorAll('.preset');
+  presets.forEach(b => b.addEventListener('click', () => { presets.forEach(p=>p.setAttribute('aria-pressed', String(p===b))); render(b.dataset.s); }));
+  render('ma');
+})();
 
 /* ---------- Market board (minh họa) ---------- */
 const STOCKS = [['FPT',128.5],['VCB',92.3],['HPG',27.6],['MWG',63.4],['VNM',61.2],['SSI',33.8],['TCB',24.9],['MBB',23.7],['ACB',25.4],['VHM',41.5]];
