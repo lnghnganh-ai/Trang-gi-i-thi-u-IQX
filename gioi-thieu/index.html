@@ -1,0 +1,1612 @@
+<title>IQX Giới thiệu</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="IQX: học đầu tư có hệ thống, chơi Flashback trên dữ liệu lịch sử, thực hành bằng vốn ảo trước khi đầu tư thật.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout concept: một vòng lặp Học → Chơi → Thực hành làm xương sống; mỗi section là một chặng của hành trình, dữ liệu minh họa đi kèm câu chuyện. */
+:root{
+  --bg: oklch(96.7% .004 256);
+  --surface: oklch(100% 0 0);
+  --surface-2: oklch(98.4% .004 256);
+  --muted: oklch(93.5% .006 256);
+  --line: oklch(90% .006 256);
+  --fg: oklch(27% .018 256);
+  --fg-2: oklch(46% .016 256);
+  --primary: oklch(53.4% .196 257.8);
+  --primary-ink: oklch(99% 0 0);
+  --primary-soft: oklch(94.5% .03 257.8);
+  --gold: oklch(60% .13 78);
+  --gold-soft: oklch(95.5% .045 85);
+  --violet: oklch(50% .259 291.9);
+  --up: oklch(52% .14 150);
+  --down: oklch(55% .2 25);
+  --ref: oklch(62% .13 78);
+  --deep: oklch(24% .05 260);
+  --deep-fg: oklch(96% .01 256);
+  --shadow: 0 1px 2px oklch(27% .018 256 / .06), 0 8px 24px oklch(27% .018 256 / .06);
+  --font-body: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-head: "Space Grotesk", "Be Vietnam Pro", system-ui, sans-serif;
+  --r-sm: 6px; --r: 10px; --r-lg: 16px;
+  --max: 1160px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg: oklch(17.5% .014 256); --surface: oklch(21.5% .016 256); --surface-2: oklch(19.5% .015 256);
+    --muted: oklch(26% .016 256); --line: oklch(30% .016 256);
+    --fg: oklch(95% .005 256); --fg-2: oklch(74% .012 256);
+    --primary: oklch(68% .16 257.8); --primary-ink: oklch(18% .02 256); --primary-soft: oklch(28% .06 257.8);
+    --gold: oklch(80% .13 82); --gold-soft: oklch(30% .05 82); --violet: oklch(70% .17 292);
+    --up: oklch(74% .16 150); --down: oklch(70% .18 25); --ref: oklch(82% .13 82);
+    --deep: oklch(13% .02 260); --deep-fg: oklch(96% .01 256);
+    --shadow: 0 1px 2px oklch(0% 0 0 / .3), 0 8px 24px oklch(0% 0 0 / .25);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg: oklch(17.5% .014 256); --surface: oklch(21.5% .016 256); --surface-2: oklch(19.5% .015 256);
+  --muted: oklch(26% .016 256); --line: oklch(30% .016 256);
+  --fg: oklch(95% .005 256); --fg-2: oklch(74% .012 256);
+  --primary: oklch(68% .16 257.8); --primary-ink: oklch(18% .02 256); --primary-soft: oklch(28% .06 257.8);
+  --gold: oklch(80% .13 82); --gold-soft: oklch(30% .05 82); --violet: oklch(70% .17 292);
+  --up: oklch(74% .16 150); --down: oklch(70% .18 25); --ref: oklch(82% .13 82);
+  --deep: oklch(13% .02 260); --deep-fg: oklch(96% .01 256);
+  --shadow: 0 1px 2px oklch(0% 0 0 / .3), 0 8px 24px oklch(0% 0 0 / .25);
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:84px}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important} }
+body{background:var(--bg); color:var(--fg); font-family:var(--font-body); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:60; background:var(--surface)}
+h1,h2,h3,h4{font-family:var(--font-head); line-height:1.15; margin:0; text-wrap:balance; letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%; display:block}
+:focus-visible{outline:2px solid var(--primary); outline-offset:3px; border-radius:4px}
+.num{font-family:var(--font-head); font-variant-numeric:tabular-nums}
+.wrap{max-width:var(--max); margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+.sec{padding-block:72px}
+@media (max-width:640px){ .sec{padding-block:52px} }
+.eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--primary)}
+.eyebrow::before{content:""; width:18px; height:2px; background:currentColor; border-radius:2px}
+.sec-head{display:grid; gap:12px; max-width:720px; margin-bottom:36px}
+.sec-head h2{font-size:clamp(28px, 4vw, 40px)}
+.sec-head p{color:var(--fg-2); font-size:17px; max-width:62ch}
+.icon{width:20px; height:20px; flex:none; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+.demo-tag{display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:600; color:var(--fg-2); background:var(--muted); border-radius:999px; padding:3px 10px; letter-spacing:.02em}
+.demo-tag::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--gold)}
+
+/* Buttons */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:46px; padding:0 20px; border-radius:var(--r-sm); font:600 15px/1 var(--font-body); text-decoration:none; border:1px solid transparent; cursor:pointer; transition:background .2s, border-color .2s, transform .15s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--primary); color:var(--primary-ink)}
+.btn-primary:hover{background:color-mix(in oklab, var(--primary) 88%, black)}
+.btn-ghost{background:var(--surface); color:var(--fg); border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--primary); color:var(--primary)}
+.btn .icon{width:18px; height:18px}
+
+/* Header */
+.hdr{position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:color-mix(in oklab, var(--surface) 92%, transparent); backdrop-filter:saturate(1.4) blur(10px); border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex; align-items:center; gap:24px; height:64px}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; font:700 22px/1 var(--font-head); letter-spacing:-.02em}
+.brand img{width:30px; height:30px}
+.nav{display:flex; gap:4px; margin-left:8px}
+.nav a{font-size:14px; font-weight:600; color:var(--fg-2); text-decoration:none; padding:8px 12px; border-radius:var(--r-sm); text-transform:uppercase; letter-spacing:.03em}
+.nav a:hover{color:var(--primary); background:var(--primary-soft)}
+.hdr-cta{margin-left:auto; display:flex; gap:8px; align-items:center}
+.menu-btn{display:none; width:44px; height:44px; border-radius:var(--r-sm); border:1px solid var(--line); background:var(--surface); color:var(--fg); align-items:center; justify-content:center; cursor:pointer}
+.mnav{display:none}
+@media (max-width:920px){
+  .nav{display:none}
+  .menu-btn{display:inline-flex}
+  .hdr-cta .btn{min-height:42px; padding:0 14px; font-size:14px}
+  .mnav{display:grid; border-top:1px solid var(--line); padding-block:8px 16px}
+  .mnav[hidden]{display:none!important}
+  .mnav a{padding:12px 4px; font-weight:600; text-decoration:none; border-bottom:1px solid var(--line)}
+}
+@media (max-width:420px){ .hdr-cta .btn span.long{display:none} }
+
+/* Ticker */
+.tape{background:var(--deep); color:var(--deep-fg); font-size:13px; overflow:hidden; border-bottom:1px solid var(--line)}
+.tape-inner{display:flex; align-items:center; gap:16px; height:36px}
+.tape-label{flex:none; font-weight:700; font-size:11px; letter-spacing:.08em; text-transform:uppercase; opacity:.75}
+.tape-track{flex:1; min-width:0; overflow:hidden; mask-image:linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent)}
+.tape-move{display:flex; gap:28px; width:max-content; animation:tape 50s linear infinite}
+.tape:hover .tape-move{animation-play-state:paused}
+@keyframes tape{to{transform:translateX(-50%)}}
+.tk{display:inline-flex; gap:8px; white-space:nowrap; font-variant-numeric:tabular-nums}
+.tk b{font-family:var(--font-head)}
+.tk .u{color:oklch(78% .16 150)} .tk .d{color:oklch(72% .17 25)}
+
+/* Hero */
+.hero{padding-block:56px 40px}
+.hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center}
+.hero h1{font-size:clamp(36px, 5.6vw, 62px); letter-spacing:-.025em; margin-top:16px}
+.hero h1 em{font-style:normal; color:var(--primary)}
+.hero-lede{font-size:18px; color:var(--fg-2); margin-top:18px; max-width:54ch}
+.hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:28px}
+.hero-note{display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--fg-2); margin-top:16px}
+.hero-note .icon{width:16px; height:16px; color:var(--up)}
+@media (max-width:920px){ .hero-grid{grid-template-columns:1fr; gap:32px} }
+
+/* Loop visual */
+.loop{position:relative; width:100%; max-width:520px; aspect-ratio:1; margin-inline:auto}
+.loop svg.ring{position:absolute; inset:0; width:100%; height:100%}
+.loop .ring-path{fill:none; stroke:var(--line); stroke-width:2; stroke-dasharray:4 7}
+.loop .ring-flow{fill:none; stroke:var(--primary); stroke-width:2.5; stroke-linecap:round; stroke-dasharray:60 900; animation:flow 6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-960}}
+.loop-center{position:absolute; left:50%; top:50%; width:46%; transform:translate(-50%,-52%); text-align:center}
+.loop-center img{width:100%; filter:drop-shadow(0 18px 18px oklch(27% .05 256 / .16))}
+.loop-center .disc{position:absolute; left:10%; right:10%; bottom:2%; height:12%; border-radius:50%; background:var(--primary-soft); z-index:-1}
+.node{position:absolute; width:min(42%, 190px); background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:12px 14px; box-shadow:var(--shadow); text-decoration:none; transition:border-color .2s, transform .2s}
+.node:hover{border-color:var(--primary); transform:translateY(-2px)}
+.node .k{display:flex; align-items:center; gap:8px; font:700 15px/1.2 var(--font-head)}
+.node .k span.badge{width:30px; height:30px; border-radius:8px; display:grid; place-items:center; background:var(--primary-soft); color:var(--primary)}
+.node p{font-size:12.5px; color:var(--fg-2); margin-top:6px; line-height:1.45}
+.node.n1{left:50%; top:0; transform:translateX(-50%)}
+.node.n1:hover{transform:translate(-50%,-2px)}
+.node.n2{right:0; bottom:8%}
+.node.n3{left:0; bottom:8%}
+.node.n2 .badge{background:var(--gold-soft)!important; color:var(--gold)!important}
+.node.n3 .badge{background:color-mix(in oklab, var(--up) 14%, var(--surface))!important; color:var(--up)!important}
+@media (max-width:480px){ .node{padding:9px 10px} .node p{display:none} .node .k{font-size:13.5px} .node .k span.badge{width:26px;height:26px} }
+
+/* Proof strip */
+.proof{display:grid; grid-template-columns:repeat(6,1fr); background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); margin-top:48px}
+.proof div{padding:18px 18px; border-left:1px solid var(--line)}
+.proof div:first-child{border-left:0}
+.proof b{display:block; font:700 28px/1.1 var(--font-head); font-variant-numeric:tabular-nums}
+.proof span{display:block; font-size:13px; color:var(--fg-2); margin-top:4px; line-height:1.4}
+@media (max-width:920px){ .proof{grid-template-columns:repeat(3,1fr)} .proof div:nth-child(4){border-left:0} .proof div:nth-child(n+4){border-top:1px solid var(--line)} }
+@media (max-width:520px){ .proof{grid-template-columns:repeat(2,1fr)} .proof div{border-left:0; border-top:1px solid var(--line)} .proof div:nth-child(even){border-left:1px solid var(--line)} .proof div:nth-child(-n+2){border-top:0} .proof b{font-size:24px} }
+
+/* Story · Mission band */
+.mission{position:relative; overflow:hidden; background:var(--deep); color:var(--deep-fg); isolation:isolate}
+.mission canvas{position:absolute; inset:0; width:100%; height:100%; z-index:-1}
+.mission::after{content:""; position:absolute; inset:0; z-index:-1; background:radial-gradient(ellipse 70% 90% at 15% 40%, oklch(24% .05 260 / .2), oklch(14% .04 262 / .92) 75%)}
+.mission .wrap{padding-block:104px 72px}
+.mission .eyebrow{color:oklch(86% .13 85)}
+.mission h2{font-size:clamp(34px, 6.2vw, 74px); line-height:1.07; letter-spacing:-.035em; font-weight:600; max-width:17ch; margin-top:22px}
+.mark{background-image:linear-gradient(transparent 64%, oklch(80% .14 85 / .5) 64%, oklch(80% .14 85 / .5) 92%, transparent 92%); background-repeat:no-repeat; background-size:100% 100%; transition:background-size 1.1s cubic-bezier(.2,.7,.2,1); -webkit-box-decoration-break:clone; box-decoration-break:clone}
+.hl-wait .mark{background-size:0% 100%}
+.hl-wait .mark:nth-child(2){transition-delay:.25s} .hl-wait .mark:nth-child(3){transition-delay:.5s}
+.mission-foot{display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:end; margin-top:56px; padding-top:28px; border-top:1px solid oklch(100% 0 0 / .14)}
+.mission-lede{font-size:clamp(17px, 1.6vw, 20px); line-height:1.6; color:oklch(88% .015 256); max-width:48ch}
+.mission-facts{display:grid; grid-template-columns:repeat(3, auto); justify-content:end; gap:32px; margin:0}
+.mission-facts dt{font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:oklch(74% .02 256)}
+.mission-facts dd{margin:6px 0 0; font:700 28px/1 var(--font-head); font-variant-numeric:tabular-nums}
+.mission-facts div:last-child dd{color:oklch(86% .13 85)}
+@media (max-width:860px){ .mission .wrap{padding-block:72px 52px} .mission-foot{grid-template-columns:1fr; gap:28px; margin-top:40px} .mission-facts{justify-content:start; grid-template-columns:repeat(3, minmax(0,auto)); gap:22px} .mission-facts dd{font-size:22px} }
+
+/* Story · Chapters */
+.chapter{display:grid; grid-template-columns:200px minmax(0,1fr); gap:56px; padding-block:88px; border-bottom:1px solid var(--line)}
+.chapter:last-child{border-bottom:0}
+.ch-label{position:sticky; top:100px; align-self:start; display:grid; gap:10px}
+.ch-num{font:700 72px/.9 var(--font-head); letter-spacing:-.04em; color:transparent; -webkit-text-stroke:1.5px var(--primary)}
+.ch-name{font-size:12.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-2)}
+.ch-body > h3{font-size:clamp(28px, 3.6vw, 44px); letter-spacing:-.025em; max-width:20ch}
+.ch-lead{font-size:clamp(17px, 1.5vw, 19px); color:var(--fg-2); margin-top:18px; max-width:60ch; line-height:1.65}
+@media (max-width:860px){
+  .chapter{grid-template-columns:1fr; gap:20px; padding-block:60px}
+  .ch-label{position:static; display:flex; align-items:baseline; gap:14px}
+  .ch-num{font-size:48px}
+}
+
+/* Two paths */
+.tracks{display:grid; gap:20px; margin-top:40px}
+.track{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:24px 26px 26px}
+.track.good{border-color:color-mix(in oklab, var(--primary) 35%, var(--line)); box-shadow:var(--shadow)}
+.track-h{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px}
+.track-h h4{font-size:18px}
+.fee{font-size:12.5px; font-weight:700; padding:4px 10px; border-radius:999px; font-variant-numeric:tabular-nums}
+.track.bad .fee{background:color-mix(in oklab, var(--down) 13%, var(--surface)); color:var(--down)}
+.track.good .fee{background:var(--primary-soft); color:var(--primary)}
+.line{list-style:none; margin:26px 0 0; padding:0; display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); position:relative}
+.line::before{content:""; position:absolute; left:12px; right:12px; top:11px; height:3px; border-radius:3px; background:var(--line)}
+.track.good .line::before{background:linear-gradient(90deg, var(--primary), var(--gold))}
+.stop{position:relative; padding-right:16px}
+.stop > i{position:relative; z-index:1; display:grid; place-items:center; width:25px; height:25px; border-radius:50%; background:var(--surface); border:3px solid var(--fg-2)}
+.track.good .stop > i{border-color:var(--primary)}
+.stop.loss > i{background:var(--down); border-color:var(--down); color:var(--surface)}
+.stop.loss > i::before{content:""; width:10px; height:2.5px; border-radius:2px; background:currentColor}
+.stop.win > i{width:31px; height:31px; margin:-3px 0 0 -3px; background:var(--gold); border-color:color-mix(in oklab, var(--gold) 60%, var(--surface)); box-shadow:0 0 0 6px var(--gold-soft)}
+.stop b{display:block; margin-top:14px; font:600 16px/1.3 var(--font-head)}
+.stop.loss b{color:var(--down)}
+.stop span{display:block; font-size:13.5px; color:var(--fg-2); margin-top:4px; line-height:1.45}
+@media (max-width:640px){
+  .track{padding:20px}
+  .line{grid-template-columns:1fr; gap:18px}
+  .line::before{left:11px; right:auto; top:12px; bottom:12px; width:3px; height:auto}
+  .track.good .line::before{background:linear-gradient(180deg, var(--primary), var(--gold))}
+  .stop{display:grid; grid-template-columns:25px 1fr; gap:14px; padding-right:0}
+  .stop b{margin-top:0}
+  .stop.win > i{margin:-3px 0 0 -3px}
+}
+
+/* Beliefs */
+.beliefs{list-style:none; margin:36px 0 0; padding:0}
+.belief{display:grid; grid-template-columns:48px minmax(0,1.15fr) minmax(0,1fr); gap:24px; align-items:start; padding:28px 0; border-top:1px solid var(--line)}
+.belief:last-child{border-bottom:1px solid var(--line)}
+.belief .bi{width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--primary-soft); color:var(--primary); transition:background .25s, color .25s}
+.belief h4{font-size:clamp(22px, 2.5vw, 30px); letter-spacing:-.02em; line-height:1.2; transition:color .25s}
+.belief p{color:var(--fg-2); font-size:15.5px; padding-top:4px}
+.belief:hover h4{color:var(--primary)}
+.belief:hover .bi{background:var(--primary); color:var(--primary-ink)}
+@media (max-width:760px){ .belief{grid-template-columns:44px minmax(0,1fr); gap:8px 16px; padding:22px 0} .belief p{grid-column:2} }
+
+/* Xu engine */
+.equation{display:flex; flex-wrap:wrap; align-items:center; gap:clamp(10px, 2.6vw, 28px); margin-top:36px; padding:clamp(20px, 3vw, 32px); border-radius:var(--r-lg); background:var(--surface); border:1px solid var(--line)}
+.eq-term{display:grid; gap:6px}
+.eq-term b{font:700 clamp(34px, 5.6vw, 60px)/1 var(--font-head); letter-spacing:-.03em; font-variant-numeric:tabular-nums}
+.eq-term span{font-size:13px; font-weight:600; color:var(--fg-2); text-transform:uppercase; letter-spacing:.06em}
+.eq-term.xu b{color:var(--gold)}
+.eq-term.vnd b{color:var(--primary)}
+.eq-op{font:500 clamp(28px, 4vw, 44px)/1 var(--font-head); color:var(--fg-2)}
+.flow{display:grid; grid-template-columns:minmax(0,1fr) 180px minmax(0,1fr); gap:40px; align-items:center; margin-top:24px}
+.flow-col{display:grid; gap:12px}
+.flow-col h5{margin:0 0 2px; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-2)}
+.fnode{position:relative; display:grid; grid-template-columns:38px 1fr; gap:12px; align-items:center; padding:12px 14px; background:var(--surface); border:1px solid var(--line); border-radius:var(--r)}
+.fnode .fi{width:38px; height:38px; border-radius:10px; display:grid; place-items:center; background:var(--primary-soft); color:var(--primary)}
+.fnode b{display:block; font-size:15px; line-height:1.3}
+.fnode small{display:block; font-size:12.5px; color:var(--fg-2); line-height:1.35; margin-top:2px}
+.fnode small em{font-style:normal; font-weight:700; color:var(--gold)}
+.flow-col.src .fnode::after, .flow-col.out .fnode::before{content:""; position:absolute; top:50%; width:41px; height:2px; background:repeating-linear-gradient(90deg, var(--gold) 0 6px, transparent 6px 11px); background-size:22px 2px; animation:dash 1.2s linear infinite}
+.flow-col.src .fnode::after{left:100%}
+.flow-col.out .fnode::before{right:100%}
+@keyframes dash{to{background-position:22px 0}}
+.wallet{aspect-ratio:1; border-radius:50%; display:grid; place-items:center; text-align:center; background:radial-gradient(circle at 35% 30%, color-mix(in oklab, var(--gold) 30%, var(--surface)), var(--gold-soft) 70%); border:3px solid var(--gold); box-shadow:0 0 0 10px var(--gold-soft), var(--shadow)}
+.wallet .icon{width:34px; height:34px; color:var(--gold); margin:0 auto}
+.wallet b{display:block; font:700 20px/1.1 var(--font-head); margin-top:6px}
+.wallet small{display:block; font-size:12px; color:var(--fg-2); margin-top:2px}
+@media (max-width:900px){
+  .flow{grid-template-columns:1fr; gap:22px}
+  .wallet{width:160px; margin:0 auto}
+  .flow-col.src .fnode::after, .flow-col.out .fnode::before{display:none}
+}
+.closing{margin-top:48px; font-size:clamp(19px, 2vw, 24px); line-height:1.55; letter-spacing:-.01em; max-width:52ch; font-family:var(--font-head); font-weight:500}
+.closing strong{color:var(--primary); font-weight:700}
+.closing .q{color:var(--fg-2)}
+
+.story{background:var(--surface); border-block:1px solid var(--line)}
+.compare{display:grid; gap:16px}
+.path{display:grid; grid-template-columns:150px 1fr; gap:20px; align-items:center; padding:20px; border-radius:var(--r-lg); border:1px solid var(--line); background:var(--surface-2)}
+.path.iqx{border-color:color-mix(in oklab, var(--primary) 40%, var(--line)); background:var(--primary-soft)}
+.path h3{font-size:16px}
+.path .lbl{font-size:13px; color:var(--fg-2)}
+.steps{display:flex; flex-wrap:wrap; align-items:center; gap:8px}
+.step{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:var(--surface); border:1px solid var(--line); font-size:14px; font-weight:600}
+.step.bad{color:var(--down)}
+.step.good{color:var(--primary); border-color:color-mix(in oklab, var(--primary) 35%, var(--line))}
+.step.final{background:var(--primary); color:var(--primary-ink); border-color:var(--primary)}
+.arrow{color:var(--fg-2); display:inline-flex}
+.arrow .icon{width:16px; height:16px}
+@media (max-width:700px){ .path{grid-template-columns:1fr; gap:12px} }
+.story-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; margin-top:56px}
+.story-grid h3{font-size:24px}
+.story-grid > div > p{color:var(--fg-2); margin-top:12px}
+@media (max-width:860px){ .story-grid{grid-template-columns:1fr; gap:32px} }
+
+/* Xu economy */
+.econ{background:var(--surface-2); border:1px solid var(--line); border-radius:var(--r-lg); padding:20px}
+.econ-eq{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px; padding:18px; border-radius:var(--r); background:var(--surface); border:1px dashed color-mix(in oklab, var(--gold) 50%, var(--line))}
+.eq-item{text-align:center}
+.eq-item b{display:block; font:700 26px/1 var(--font-head); font-variant-numeric:tabular-nums}
+.eq-item span{font-size:12px; color:var(--fg-2)}
+.eq-item.xu b{color:var(--gold)}
+.eq-sign{font:600 22px/1 var(--font-head); color:var(--fg-2)}
+.econ-cols{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px}
+.econ-cols h4{font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--fg-2); margin-bottom:8px; font-family:var(--font-body)}
+.econ-cols ul{list-style:none; margin:0; padding:0; display:grid; gap:8px}
+.econ-cols li{display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4}
+.econ-cols li .icon{width:18px; height:18px; margin-top:1px}
+.econ-cols .in .icon{color:var(--up)} .econ-cols .out .icon{color:var(--primary)}
+@media (max-width:480px){ .econ-cols{grid-template-columns:1fr} }
+
+/* Product tabs */
+.tabs{display:flex; gap:6px; padding:6px; background:var(--muted); border-radius:var(--r); width:fit-content; max-width:100%; overflow-x:auto}
+.tab{display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 18px; border:0; border-radius:var(--r-sm); background:transparent; color:var(--fg-2); font:700 14px/1 var(--font-body); letter-spacing:.04em; text-transform:uppercase; cursor:pointer; white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--surface); color:var(--primary); box-shadow:var(--shadow)}
+.tab .icon{width:18px; height:18px}
+@media (max-width:520px){ .tabs{display:grid; grid-template-columns:1fr 1fr; width:100%} .tab{justify-content:center; padding:0 10px} }
+.panel{display:grid; grid-template-columns:1fr 1.05fr; gap:28px; margin-top:24px; align-items:start}
+.panel-copy h3{font-size:26px}
+.panel-copy > p{color:var(--fg-2); margin-top:10px}
+.plist{display:grid; gap:12px; margin-top:20px}
+.pitem{display:grid; grid-template-columns:40px 1fr; gap:14px; padding:16px; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); text-decoration:none; transition:border-color .2s}
+.pitem:hover{border-color:var(--primary)}
+.pitem .ic{width:40px; height:40px; border-radius:10px; display:grid; place-items:center; background:var(--primary-soft); color:var(--primary)}
+.pitem h4{font-size:16px; display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+.pitem p{font-size:14px; color:var(--fg-2); margin-top:4px; line-height:1.5}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px}
+.chip{font-size:12px; font-weight:600; padding:3px 8px; border-radius:999px; background:var(--muted); color:var(--fg-2); font-variant-numeric:tabular-nums}
+.chip.gold{background:var(--gold-soft); color:var(--gold)}
+.preview{position:sticky; top:84px; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); box-shadow:var(--shadow); overflow:hidden}
+.preview-bar{display:flex; align-items:center; gap:8px; padding:10px 14px; border-bottom:1px solid var(--line); background:var(--surface-2); font-size:12.5px; color:var(--fg-2)}
+.preview-bar i{width:9px; height:9px; border-radius:50%; background:var(--line); display:block}
+.preview-bar span{margin-left:8px; font-family:var(--font-head)}
+.preview-body{padding:18px; min-height:360px}
+.slot{margin:0 18px 18px; border:1px dashed var(--line); border-radius:var(--r); padding:10px 12px; font-size:12.5px; color:var(--fg-2); display:flex; gap:8px; align-items:center}
+.slot .icon{width:16px; height:16px}
+@media (max-width:920px){ .panel{grid-template-columns:1fr} .preview{position:static} }
+
+/* Mock UIs */
+.m-row{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 0; border-bottom:1px solid var(--line); font-size:14px}
+.m-row:last-child{border-bottom:0}
+.m-btn{font-size:12.5px; font-weight:700; padding:6px 12px; border-radius:6px; background:var(--primary); color:var(--primary-ink)}
+.m-btn.alt{background:var(--muted); color:var(--fg)}
+.m-prog{height:6px; border-radius:6px; background:var(--muted); overflow:hidden; margin-top:8px}
+.m-prog i{display:block; height:100%; background:var(--primary); border-radius:6px}
+.m-head{display:flex; justify-content:space-between; align-items:baseline; gap:8px}
+.m-head b{font:700 17px/1.2 var(--font-head)}
+.m-sub{font-size:12.5px; color:var(--fg-2)}
+.m-belts{display:flex; gap:6px; margin-top:12px}
+.m-belts i{flex:1; height:8px; border-radius:4px; background:var(--muted)}
+.m-mascots{display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-top:14px}
+.m-mascot{border:1px solid var(--line); border-radius:var(--r); padding:6px 4px 8px; text-align:center; background:var(--surface-2)}
+.m-mascot img{width:100%; aspect-ratio:1; object-fit:contain}
+.m-mascot b{display:block; font-size:11.5px; line-height:1.2; margin-top:2px}
+.m-mascot span{display:block; font-size:10.5px; color:var(--fg-2)}
+.m-chart{width:100%; height:auto; display:block; margin-top:10px}
+.m-order{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:12px}
+.m-order div{border:1px solid var(--line); border-radius:8px; padding:8px 10px; font-size:12.5px}
+.m-order div b{display:block; font-size:15px; font-family:var(--font-head)}
+.m-post{border:1px solid var(--line); border-radius:var(--r); padding:12px; margin-top:10px; background:var(--surface-2)}
+.m-post .who{display:flex; align-items:center; gap:8px; font-size:13px; font-weight:700}
+.m-post .who i{width:26px; height:26px; border-radius:50%; background:var(--gold-soft); display:block}
+.m-post p{font-size:13.5px; margin-top:6px; color:var(--fg-2)}
+.m-chat{display:flex; flex-direction:column; gap:6px; margin-top:12px}
+.m-chat span{font-size:13px; padding:6px 10px; border-radius:12px; background:var(--muted); width:fit-content; max-width:85%}
+.m-chat span.me{align-self:flex-end; background:var(--primary); color:var(--primary-ink)}
+
+/* Flashback */
+.fb{background:var(--deep); color:var(--deep-fg)}
+.fb .sec-head p{color:oklch(80% .02 256)}
+.fb .eyebrow{color:oklch(80% .13 82)}
+.fb-grid{display:grid; grid-template-columns:1.55fr 1fr; gap:20px; align-items:stretch}
+.fb-board{background:oklch(19% .03 260); border:1px solid oklch(32% .03 260); border-radius:var(--r-lg); padding:16px; min-width:0}
+.fb-top{display:flex; flex-wrap:wrap; align-items:center; gap:10px; justify-content:space-between}
+.fb-meta{display:flex; flex-wrap:wrap; gap:8px}
+.fb-pill{font-size:12px; font-weight:600; padding:4px 10px; border-radius:999px; background:oklch(27% .03 260); color:oklch(88% .01 256); font-variant-numeric:tabular-nums}
+.fb-pill.hot{background:oklch(80% .13 82 / .18); color:oklch(86% .12 82)}
+.fb-ctrl{display:flex; gap:8px}
+.fb-ctrl button{min-height:40px; min-width:40px; padding:0 12px; border-radius:8px; border:1px solid oklch(36% .03 260); background:oklch(24% .03 260); color:var(--deep-fg); font:600 13px var(--font-body); display:inline-flex; align-items:center; gap:6px; cursor:pointer}
+.fb-ctrl button:hover{border-color:oklch(70% .14 257)}
+.fb-ctrl .icon{width:16px; height:16px}
+.fb-chart-wrap{position:relative; margin-top:12px}
+.fb-chart{width:100%; height:auto; display:block}
+.fb-reveal{margin-top:10px; display:block; background:oklch(80% .13 82 / .12); border:1px solid oklch(80% .13 82 / .35); border-radius:var(--r); padding:14px 16px}
+.fb-reveal[hidden]{display:none!important}
+.fb-reveal h3{font-size:clamp(22px, 3vw, 30px)}
+.fb-reveal p{margin-top:6px; color:oklch(86% .02 256); font-size:14.5px}
+.fb-reveal .tagline{font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:oklch(86% .12 82)}
+.fb-log{margin-top:10px; min-height:24px; font-size:13px; color:oklch(84% .02 256)}
+.fb-side{display:grid; gap:20px; grid-template-rows:auto 1fr}
+.lb{background:oklch(19% .03 260); border:1px solid oklch(32% .03 260); border-radius:var(--r-lg); padding:16px}
+.lb h3{font-size:16px; display:flex; justify-content:space-between; align-items:center}
+.lb ol{list-style:none; margin:12px 0 0; padding:0; display:grid; gap:8px}
+.lb li{display:grid; grid-template-columns:22px 40px 1fr auto; align-items:center; gap:10px; padding:8px; border-radius:10px; background:oklch(23% .03 260); transition:transform .35s}
+.lb li .rk{font:700 14px var(--font-head); color:oklch(75% .02 256); text-align:center}
+.lb li:first-child .rk{color:oklch(86% .12 82)}
+.lb li img{width:40px; height:40px; object-fit:contain; background:oklch(30% .03 260); border-radius:10px}
+.lb li b{display:block; font-size:14px}
+.lb li small{display:block; font-size:12px; color:oklch(76% .02 256); line-height:1.3}
+.lb li .pct{font:700 15px var(--font-head); font-variant-numeric:tabular-nums}
+.pct.u{color:oklch(78% .16 150)} .pct.d{color:oklch(74% .17 25)} .pct.z{color:oklch(84% .02 256)}
+.how{background:oklch(19% .03 260); border:1px solid oklch(32% .03 260); border-radius:var(--r-lg); padding:16px}
+.how h3{font-size:16px}
+.how ol{margin:10px 0 0; padding:0; list-style:none; display:grid; gap:10px; counter-reset:s}
+.how li{counter-increment:s; display:grid; grid-template-columns:28px 1fr; gap:10px; font-size:14px; color:oklch(86% .015 256); line-height:1.45}
+.how li::before{content:counter(s); width:28px; height:28px; border-radius:8px; display:grid; place-items:center; background:oklch(68% .16 257.8 / .2); color:oklch(82% .1 257.8); font:700 13px var(--font-head)}
+.how li b{color:var(--deep-fg)}
+.fb-foot{display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; margin-top:20px}
+.fb-foot p{font-size:13px; color:oklch(76% .02 256)}
+.fb .btn-ghost{background:transparent; color:var(--deep-fg); border-color:oklch(40% .03 260)}
+@media (max-width:980px){ .fb-grid{grid-template-columns:1fr} }
+
+/* Journey */
+.levels{display:grid; grid-template-columns:repeat(7,1fr); gap:8px; position:relative}
+.lv{appearance:none; text-align:left; border:1px solid var(--line); background:var(--surface); border-radius:var(--r); padding:12px; cursor:pointer; color:var(--fg); font:inherit; min-height:96px; display:flex; flex-direction:column; gap:6px; transition:border-color .2s, background .2s}
+.lv:hover{border-color:var(--primary)}
+.lv[aria-pressed="true"]{background:var(--primary); border-color:var(--primary); color:var(--primary-ink)}
+.lv small{font-size:11.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; opacity:.75}
+.lv b{font:700 16px/1.2 var(--font-head)}
+.lv-detail{display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; margin-top:16px; padding:22px; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg)}
+.lv-detail h3{font-size:22px}
+.lv-detail p.skill{color:var(--fg-2); margin-top:6px}
+.lv-detail ul{margin:14px 0 0; padding:0; list-style:none; display:grid; gap:8px}
+.lv-detail li{display:flex; gap:10px; align-items:flex-start; font-size:14.5px}
+.lv-detail li .icon{width:18px; height:18px; color:var(--up); margin-top:2px}
+.lv-detail .egg{width:120px; text-align:center; font-size:12.5px; color:var(--fg-2)}
+.lv-detail .egg img{width:120px; height:120px; object-fit:contain}
+@media (max-width:860px){ .levels{grid-template-columns:repeat(4,1fr)} }
+@media (max-width:520px){ .levels{grid-template-columns:repeat(2,1fr)} .lv{min-height:80px} .lv-detail{grid-template-columns:1fr} .lv-detail .egg{display:none} }
+.lenses{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-top:40px}
+.lens{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:14px; text-align:center}
+.lens img{width:100%; max-width:130px; aspect-ratio:1; object-fit:contain; margin:0 auto}
+.lens b{display:block; font:700 16px var(--font-head); margin-top:6px}
+.lens .layer{display:inline-block; margin-top:6px; font-size:12px; font-weight:700; padding:3px 10px; border-radius:999px; background:var(--primary-soft); color:var(--primary)}
+.lens p{font-size:13px; color:var(--fg-2); margin-top:8px; line-height:1.45}
+@media (max-width:920px){ .lenses{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:520px){ .lenses{grid-template-columns:repeat(2,1fr)} }
+
+/* Market */
+.mkt-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:20px; align-items:start}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:18px; min-width:0}
+.card-h{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:12px}
+.card-h h3{font-size:18px}
+.tbl-wrap{overflow-x:auto}
+table.board{width:100%; border-collapse:collapse; font-size:14px; font-variant-numeric:tabular-nums; min-width:440px}
+.board th{font-size:12px; font-weight:600; color:var(--fg-2); text-align:right; padding:8px 10px; border-bottom:1px solid var(--line); white-space:nowrap}
+.board th:first-child, .board td:first-child{text-align:left}
+.board td{padding:9px 10px; border-bottom:1px solid var(--line); text-align:right; transition:background .6s}
+.board td:first-child{font:700 14px var(--font-head)}
+.board .u{color:var(--up)} .board .d{color:var(--down)} .board .r{color:var(--ref)}
+.board td.flash-u{background:color-mix(in oklab, var(--up) 16%, transparent)}
+.board td.flash-d{background:color-mix(in oklab, var(--down) 16%, transparent)}
+.idx-row{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:14px}
+.idx{border:1px solid var(--line); border-radius:var(--r); padding:10px 12px; background:var(--surface-2)}
+.idx small{font-size:12px; color:var(--fg-2); font-weight:600}
+.idx b{display:block; font:700 18px var(--font-head); font-variant-numeric:tabular-nums}
+.idx span{font-size:12.5px; font-weight:600; font-variant-numeric:tabular-nums}
+@media (max-width:520px){ .idx-row{grid-template-columns:1fr 1fr} .idx:last-child{display:none} }
+.cal{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+.cal li{display:grid; grid-template-columns:56px 1fr; gap:12px; align-items:center; padding:10px; border:1px solid var(--line); border-radius:var(--r)}
+.cal .d{text-align:center; border-radius:8px; background:var(--primary-soft); color:var(--primary); padding:6px 0}
+.cal .d b{display:block; font:700 20px/1 var(--font-head)}
+.cal .d span{font-size:11px; font-weight:700; text-transform:uppercase}
+.cal h4{font-size:14.5px; font-family:var(--font-body); font-weight:600}
+.cal p{font-size:12.5px; color:var(--fg-2)}
+.imp{display:inline-block; font-size:11px; font-weight:700; padding:1px 7px; border-radius:999px; margin-left:6px; vertical-align:1px}
+.imp.h{background:color-mix(in oklab, var(--down) 15%, transparent); color:var(--down)}
+.imp.m{background:var(--gold-soft); color:var(--gold)}
+@media (max-width:920px){ .mkt-grid{grid-template-columns:1fr} }
+
+/* Plans */
+.plans{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.plan{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:24px; display:flex; flex-direction:column; gap:14px}
+.plan.pro{border-color:color-mix(in oklab, var(--gold) 55%, var(--line)); background:linear-gradient(180deg, var(--gold-soft), var(--surface) 40%)}
+.plan h3{font-size:22px; display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+.plan .price{font:700 30px/1 var(--font-head)}
+.plan .price small{font:500 14px var(--font-body); color:var(--fg-2)}
+.plan ul{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+.plan li{display:flex; gap:10px; font-size:14.5px; line-height:1.45}
+.plan li .icon{width:18px; height:18px; color:var(--up); margin-top:2px}
+.plan.pro li .icon{color:var(--gold)}
+.plan .note{font-size:13px; color:var(--fg-2); margin-top:auto}
+@media (max-width:760px){ .plans{grid-template-columns:1fr} }
+.why{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:40px}
+.why div{padding:18px; border-top:3px solid var(--primary); background:var(--surface); border-radius:0 0 var(--r) var(--r)}
+.why b{display:block; font:700 17px/1.3 var(--font-head)}
+.why p{font-size:14px; color:var(--fg-2); margin-top:6px}
+@media (max-width:920px){ .why{grid-template-columns:1fr 1fr} }
+@media (max-width:480px){ .why{grid-template-columns:1fr} }
+
+/* About / model */
+.about{background:var(--surface); border-top:1px solid var(--line)}
+.model{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+.model .card h3{font-size:17px; display:flex; gap:10px; align-items:center}
+.model .card h3 .icon{color:var(--primary)}
+.model .card p{font-size:14.5px; color:var(--fg-2); margin-top:8px}
+@media (max-width:860px){ .model{grid-template-columns:1fr} }
+.road{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:40px; position:relative}
+.road::before{content:""; position:absolute; left:0; right:0; top:11px; height:2px; background:var(--line)}
+.ms{position:relative; padding:32px 16px 0 0}
+.ms::before{content:""; position:absolute; top:4px; left:0; width:16px; height:16px; border-radius:50%; background:var(--surface); border:3px solid var(--primary)}
+.ms.plan-ms::before{border-color:var(--fg-2); border-style:dashed}
+.ms small{font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--primary)}
+.ms.plan-ms small{color:var(--fg-2)}
+.ms b{display:block; font:700 17px/1.3 var(--font-head); margin-top:4px}
+.ms p{font-size:14px; color:var(--fg-2); margin-top:6px}
+@media (max-width:860px){
+  .road{grid-template-columns:1fr; gap:22px}
+  .road::before{left:7px; right:auto; top:0; bottom:0; width:2px; height:auto}
+  .ms{padding:0 0 0 34px}
+  .ms::before{top:2px}
+}
+.company{display:grid; grid-template-columns:1.2fr 1fr; gap:24px; margin-top:48px; align-items:start}
+.facts{display:grid; grid-template-columns:auto 1fr; gap:10px 20px; font-size:14.5px; margin:0}
+.facts dt{color:var(--fg-2)}
+.facts dd{margin:0; font-weight:600}
+@media (max-width:760px){ .company{grid-template-columns:1fr} .facts{grid-template-columns:1fr; gap:2px} .facts dd{margin-bottom:10px} }
+
+/* Final CTA + footer */
+.final{background:var(--primary); color:var(--primary-ink); border-radius:var(--r-lg); padding:36px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; overflow:hidden; position:relative}
+.final h2{font-size:clamp(26px, 3.6vw, 36px)}
+.final p{margin-top:8px; opacity:.9; max-width:56ch}
+.final .btn{background:var(--primary-ink); color:var(--primary)}
+.final .btn.ghost{background:transparent; color:var(--primary-ink); border-color:color-mix(in oklab, var(--primary-ink) 50%, transparent)}
+.final img{position:absolute; right:-30px; bottom:-40px; width:200px; opacity:.18; pointer-events:none}
+@media (max-width:760px){ .final{grid-template-columns:1fr; padding:26px} }
+.ftr{padding-block:40px; font-size:13.5px; color:var(--fg-2)}
+.ftr .row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; align-items:center}
+.ftr .disc{margin-top:16px; max-width:90ch; line-height:1.55}
+.ftr a{color:var(--fg-2)}
+.sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+
+/* ============ Editorial system áp dụng toàn trang ============ */
+.ruled{border-top:1px solid var(--line)}
+.sec{padding-block:96px}
+@media (max-width:640px){ .sec{padding-block:60px} }
+
+/* Chapter heads */
+.chead{display:grid; grid-template-columns:200px minmax(0,1fr); gap:56px; margin-bottom:48px}
+.chead .ch-label{position:static}
+.chead h2{font-size:clamp(30px, 4.4vw, 54px); letter-spacing:-.032em; line-height:1.08; max-width:19ch}
+.chead p{font-size:clamp(17px, 1.5vw, 19px); color:var(--fg-2); margin-top:18px; max-width:60ch; line-height:1.65}
+@media (max-width:860px){ .chead{grid-template-columns:1fr; gap:18px; margin-bottom:32px} .chead .ch-label{display:flex; align-items:baseline; gap:14px} }
+
+/* Dark bands */
+.dark-band{position:relative; overflow:hidden; isolation:isolate; background:var(--deep); color:var(--deep-fg)}
+.candles{position:absolute; inset:0; width:100%; height:100%; z-index:-1}
+.dark-band::after{content:""; position:absolute; inset:0; z-index:-1; background:radial-gradient(ellipse 70% 90% at 15% 40%, oklch(24% .05 260 / .25), oklch(14% .04 262 / .94) 75%)}
+.dark-band .ch-num{-webkit-text-stroke-color:oklch(86% .13 85)}
+.dark-band .ch-name{color:oklch(76% .02 256)}
+.dark-band .chead p{color:oklch(82% .02 256)}
+.dark-band .eyebrow{color:oklch(86% .13 85)}
+
+/* Hero */
+.hero{padding-block:72px 56px}
+.hero h1{font-size:clamp(40px, 6vw, 72px); letter-spacing:-.035em; line-height:1.04; font-weight:600}
+.mark-soft{color:var(--primary); background-image:linear-gradient(transparent 60%, var(--primary-soft) 60%, var(--primary-soft) 94%, transparent 94%); background-repeat:no-repeat; background-size:100% 100%; transition:background-size 1.1s cubic-bezier(.2,.7,.2,1)}
+.hero-lede{font-size:clamp(17px, 1.5vw, 19px); line-height:1.65}
+.proof{background:transparent; border:0; border-top:1px solid var(--line); border-radius:0; margin-top:72px}
+.proof div, .proof div:nth-child(n){border:0; padding:24px 20px 0 0}
+.proof b{font-size:clamp(30px, 3.6vw, 44px); letter-spacing:-.03em; font-weight:600}
+.proof div:nth-child(3) b{color:var(--primary)}
+.proof span{font-size:13.5px}
+@media (max-width:520px){ .proof div, .proof div:nth-child(n){padding:20px 12px 0 0} }
+
+/* Products */
+.tabs{background:transparent; padding:0; border-radius:0; gap:32px; width:100%; border-bottom:1px solid var(--line)}
+.tab{min-height:60px; padding:0 2px; border-radius:0; font:600 clamp(18px, 2vw, 24px)/1 var(--font-head); letter-spacing:-.015em; text-transform:none; border-bottom:3px solid transparent; margin-bottom:-1px; color:var(--fg-2)}
+.tab:hover{color:var(--fg)}
+.tab[aria-selected="true"]{background:transparent; box-shadow:none; color:var(--fg); border-bottom-color:var(--primary)}
+.tab[aria-selected="true"] .icon{color:var(--primary)}
+@media (max-width:520px){ .tabs{gap:0 14px; border-bottom:0} .tab{justify-content:flex-start; border-bottom:1px solid var(--line); min-height:52px; font-size:18px} .tab[aria-selected="true"]{border-bottom:3px solid var(--primary)} }
+.panel{margin-top:40px; gap:48px}
+.panel-copy h3{font-size:clamp(24px, 2.8vw, 34px); letter-spacing:-.025em}
+.plist{gap:0; margin-top:24px}
+.pitem{background:transparent; border:0; border-top:1px solid var(--line); border-radius:0; padding:20px 0}
+.pitem:last-child{border-bottom:1px solid var(--line)}
+.pitem h4{font-size:19px; transition:color .2s}
+.pitem:hover h4{color:var(--primary)}
+.pitem:hover .ic{background:var(--primary); color:var(--primary-ink)}
+.pitem .ic{transition:background .2s, color .2s}
+.preview{top:96px}
+
+/* Flashback */
+.fb-board, .lb, .how{background:oklch(19% .03 260 / .85); backdrop-filter:blur(4px)}
+
+/* Journey: tuyến 7 cấp */
+.levels{grid-template-columns:repeat(7, minmax(0,1fr)); gap:0; position:relative}
+.levels::before{content:""; position:absolute; left:14px; right:14px; top:13px; height:3px; border-radius:3px; background:linear-gradient(90deg, var(--primary), var(--gold))}
+.lv{background:transparent; border:0; border-radius:0; padding:0 10px 0 0; min-height:0; gap:4px; align-items:flex-start}
+.lv::before{content:""; position:relative; z-index:1; width:28px; height:28px; border-radius:50%; background:var(--surface); border:3px solid var(--primary); margin-bottom:12px; transition:background .2s, box-shadow .2s}
+.lv:last-child::before{border-color:var(--gold)}
+.lv:hover{border:0} .lv:hover b{color:var(--primary)}
+.lv[aria-pressed="true"]{background:transparent; color:var(--fg)}
+.lv[aria-pressed="true"]::before{background:var(--primary); box-shadow:0 0 0 7px var(--primary-soft)}
+.lv[aria-pressed="true"] b{color:var(--primary)}
+.lv:last-child[aria-pressed="true"]::before{background:var(--gold); box-shadow:0 0 0 7px var(--gold-soft)}
+.lv small{color:var(--fg-2); opacity:1}
+.lv b{font-size:17px; transition:color .2s}
+.lv-detail{margin-top:36px; padding:28px 32px; box-shadow:var(--shadow); border-color:color-mix(in oklab, var(--primary) 25%, var(--line))}
+.lv-detail h3{font-size:clamp(22px, 2.4vw, 28px); letter-spacing:-.02em}
+@media (max-width:860px){
+  .levels{grid-template-columns:1fr; gap:14px}
+  .levels::before{left:13px; right:auto; top:14px; bottom:14px; width:3px; height:auto; background:linear-gradient(180deg, var(--primary), var(--gold))}
+  .lv{display:grid; grid-template-columns:28px 64px 1fr; align-items:center; gap:14px; padding:0}
+  .lv::before{margin:0}
+  .lv-detail{padding:22px}
+}
+.lenses{gap:24px; margin-top:44px}
+.lens{background:transparent; border:0; border-radius:0; padding:0; text-align:left}
+.lens img{max-width:none; width:100%; height:auto; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle at 50% 60%, var(--primary-soft), transparent 70%)}
+.lens b{font-size:19px; margin-top:12px}
+.lens .layer{background:transparent; padding:0; border-radius:0; font-size:12px; letter-spacing:.08em; text-transform:uppercase}
+.lens p{font-size:14px}
+
+/* Why + plans */
+.why{gap:28px; margin-bottom:56px}
+.why div{border-top:2px solid var(--fg); background:transparent; border-radius:0; padding:22px 0 0}
+.why div:first-child{border-top-color:var(--primary)}
+.why b{font-size:21px; letter-spacing:-.015em}
+.why p{font-size:15px}
+.plan{padding:32px}
+.plan h3{font-size:26px}
+.plan .price{font-size:40px; letter-spacing:-.03em}
+.plan.pro{background:var(--deep); color:var(--deep-fg); border-color:transparent; position:relative; overflow:hidden}
+.plan.pro::before{content:""; position:absolute; right:-80px; top:-80px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, oklch(80% .13 82 / .28), transparent 70%)}
+.plan.pro .price{color:oklch(86% .13 85)}
+.plan.pro li{color:oklch(90% .015 256)}
+.plan.pro li .icon{color:oklch(86% .13 85)}
+.plan.pro .note{color:oklch(78% .02 256)}
+.plan.pro .demo-tag{background:oklch(28% .03 260); color:oklch(84% .02 256)}
+
+/* About */
+.model{gap:40px}
+.model .card{background:transparent; border:0; border-top:1px solid var(--line); border-radius:0; padding:24px 0 0}
+.model .card h3{font-size:20px}
+.road{margin-top:64px}
+.road::before{top:13px; height:3px; border-radius:3px; background:linear-gradient(90deg, var(--primary) 0, var(--primary) 50%, var(--line) 50%)}
+.ms::before{width:20px; height:20px; top:4px}
+@media (max-width:860px){ .road::before{width:3px; height:auto; background:linear-gradient(180deg, var(--primary) 0, var(--primary) 50%, var(--line) 50%)} }
+.company{margin-top:64px}
+
+/* CTA band */
+.cta-band .wrap{padding-block:104px 96px; position:relative}
+.cta-band h2{font-size:clamp(36px, 6vw, 76px); line-height:1.05; letter-spacing:-.035em; font-weight:600; max-width:15ch; margin-top:20px}
+.cta-row{display:grid; grid-template-columns:1fr auto; gap:32px; align-items:end; margin-top:44px; padding-top:28px; border-top:1px solid oklch(100% 0 0 / .14)}
+.cta-row p{font-size:clamp(17px, 1.6vw, 20px); color:oklch(86% .015 256); max-width:46ch}
+.cta-row .btns{display:flex; flex-wrap:wrap; gap:12px}
+.cta-band .btn-gold{background:oklch(86% .13 85); color:oklch(20% .04 260)}
+.cta-band .btn-gold:hover{background:oklch(90% .12 88)}
+.cta-band .btn-line{background:transparent; color:var(--deep-fg); border-color:oklch(100% 0 0 / .3)}
+.cta-band .btn-line:hover{border-color:oklch(86% .13 85); color:oklch(86% .13 85)}
+.cta-mascot{position:absolute; right:max(16px, env(safe-area-inset-right, 0px)); top:56px; width:clamp(120px, 18vw, 230px); filter:drop-shadow(0 20px 30px oklch(0% 0 0 / .4))}
+@media (max-width:760px){ .cta-row{grid-template-columns:1fr} .cta-mascot{display:none} }
+
+/* Footer */
+.ftr{padding-block:56px 40px; border-top:1px solid var(--line); background:var(--surface)}
+.ftr-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1.4fr; gap:32px}
+.ftr-grid h3{font:700 12px/1 var(--font-body); letter-spacing:.08em; text-transform:uppercase; color:var(--fg); margin-bottom:14px}
+.ftr-grid nav{display:grid; gap:10px; align-content:start}
+.ftr-grid nav a{text-decoration:none; color:var(--fg-2); font-size:14.5px}
+.ftr-grid nav a:hover{color:var(--primary)}
+.ftr-grid p{font-size:14px; line-height:1.6}
+.ftr .disc{margin-top:40px; padding-top:24px; border-top:1px solid var(--line); font-size:13px}
+@media (max-width:860px){ .ftr-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:480px){ .ftr-grid{grid-template-columns:1fr} }
+
+/* ============ Lớp hình ảnh theo nhận diện IQX gốc ============ */
+:root{ --r-lg:20px; --cyan: oklch(70% .13 215); --grad: linear-gradient(90deg, var(--primary) 0%, oklch(66% .15 228) 55%, var(--cyan) 100%); --lift: 0 2px 6px oklch(27% .05 256 / .06), 0 24px 48px -12px oklch(27% .08 256 / .18) }
+.grad{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-box-decoration-break:clone; box-decoration-break:clone}
+
+/* Hero */
+.hero2{position:relative; overflow:hidden; isolation:isolate; padding-block:56px 0}
+.hero-bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:70% 40%; z-index:-2}
+.hero2::before{content:""; position:absolute; inset:0; z-index:-1; background:
+  linear-gradient(90deg, var(--bg) 0%, color-mix(in oklab, var(--bg) 92%, transparent) 30%, color-mix(in oklab, var(--bg) 25%, transparent) 58%, transparent 75%),
+  linear-gradient(180deg, transparent 55%, var(--bg) 88%)}
+.hero2-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px; align-items:center; min-height:560px}
+.hero-copy{padding-block:24px 48px}
+.hero-copy h1{font-size:clamp(40px, 5vw, 62px); line-height:1.06; letter-spacing:-.035em; font-weight:700; margin-top:18px}
+.hero-copy .hero-lede{color:var(--fg-2); max-width:50ch}
+.hero-stage{position:relative; height:100%; min-height:540px}
+.hero-mascot{position:absolute; right:4%; bottom:0; width:min(92%, 520px); height:auto; filter:drop-shadow(0 30px 30px oklch(27% .08 256 / .28))}
+.float{position:absolute; display:flex; align-items:center; gap:12px; padding:12px 16px 12px 12px; background:color-mix(in oklab, var(--surface) 92%, transparent); backdrop-filter:blur(10px); border:1px solid color-mix(in oklab, var(--line) 70%, transparent); border-radius:16px; box-shadow:var(--lift); animation:bob 6s ease-in-out infinite}
+.float b{display:block; font:700 15px/1.2 var(--font-head)}
+.float small{display:block; font-size:12px; color:var(--fg-2); margin-top:2px}
+.float .up{color:var(--up)} .float em{font-style:normal; font-size:12.5px}
+.float .fi{width:40px; height:40px; border-radius:12px; display:grid; place-items:center}
+.float .fi.gold{background:var(--gold-soft); color:var(--gold)}
+.float img{width:44px; height:44px; object-fit:contain; border-radius:12px; background:var(--primary-soft)}
+.f1{left:0; top:16%}
+.f2{right:0; top:6%; animation-delay:-2s}
+.f3{left:6%; bottom:14%; animation-delay:-4s; gap:16px}
+.spark{width:110px; height:34px}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.proof2{position:relative; z-index:2; display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); box-shadow:var(--lift); margin-top:12px}
+.proof2 div{padding:22px 20px; border-left:1px solid var(--line)}
+.proof2 div:first-child{border-left:0}
+.proof2 b{display:block; font:700 clamp(26px, 2.8vw, 36px)/1.05 var(--font-head); letter-spacing:-.03em; font-variant-numeric:tabular-nums}
+.proof2 div:nth-child(3) b{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent}
+.proof2 span{display:block; font-size:13px; color:var(--fg-2); margin-top:6px}
+.pillars{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px; margin-top:28px; padding-bottom:24px}
+.pillar{position:relative; display:flex; flex-direction:column; gap:6px; padding:26px; border-radius:var(--r-lg); text-decoration:none; color:var(--fg); border:1px solid transparent; transition:transform .25s, box-shadow .25s}
+.pillar:hover{transform:translateY(-4px); box-shadow:var(--lift)}
+.pillar .pi{width:52px; height:52px; border-radius:14px; display:grid; place-items:center; margin-bottom:10px; color:var(--surface)}
+.pillar .pi .icon{width:24px; height:24px}
+.pillar .pk{font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-2)}
+.pillar b{font:700 28px/1.1 var(--font-head); letter-spacing:-.02em}
+.pillar p{color:var(--fg-2); font-size:15px; margin-top:4px}
+.pillar .pmore{display:inline-flex; align-items:center; gap:6px; margin-top:auto; padding-top:14px; font-weight:600; font-size:14px; color:var(--primary)}
+.pillar .pmore .icon{width:16px; height:16px; transition:transform .2s}
+.pillar:hover .pmore .icon{transform:translateX(4px)}
+.p-hoc{background:color-mix(in oklab, var(--primary) 9%, var(--surface)); border-color:color-mix(in oklab, var(--primary) 18%, var(--line))}
+.p-hoc .pi{background:var(--primary)}
+.p-choi{background:color-mix(in oklab, var(--gold) 12%, var(--surface)); border-color:color-mix(in oklab, var(--gold) 25%, var(--line))}
+.p-choi .pi{background:var(--gold)}
+.p-th{background:color-mix(in oklab, var(--up) 10%, var(--surface)); border-color:color-mix(in oklab, var(--up) 22%, var(--line))}
+.p-th .pi{background:var(--up)}
+@media (max-width:920px){
+  .hero2{padding-top:36px}
+  .hero2::before{background:linear-gradient(180deg, var(--bg) 0%, color-mix(in oklab, var(--bg) 88%, transparent) 42%, transparent 62%, var(--bg) 96%)}
+  .hero2-grid{grid-template-columns:1fr; min-height:0}
+  .hero-stage{min-height:420px}
+  .hero-mascot{right:50%; transform:translateX(50%); width:min(86%, 400px)}
+  .proof2{grid-template-columns:repeat(3, minmax(0,1fr))}
+  .proof2 div:nth-child(4){border-left:0}
+  .proof2 div:nth-child(n+4){border-top:1px solid var(--line)}
+  .pillars{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .hero-stage{min-height:380px}
+  .float{padding:9px 12px 9px 9px} .float b{font-size:13.5px} .float .fi, .float img{width:34px; height:34px}
+  .f1{top:4%} .f2{top:30%} .f3{bottom:6%} .f3 .spark{display:none}
+  .proof2{grid-template-columns:repeat(2, minmax(0,1fr))}
+  .proof2 div, .proof2 div:nth-child(n){border-left:0; border-top:1px solid var(--line)}
+  .proof2 div:nth-child(-n+2){border-top:0}
+  .proof2 div:nth-child(even){border-left:1px solid var(--line)}
+}
+
+/* Mission trên tranh đêm */
+.mission-bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:right center; z-index:-2}
+.mission::after{z-index:-1; background:linear-gradient(90deg, oklch(17% .07 262 / .94) 0%, oklch(18% .07 262 / .8) 45%, oklch(20% .07 262 / .25) 100%), linear-gradient(0deg, oklch(15% .06 262 / .7), transparent 50%)}
+.mission .wrap{padding-block:120px 80px}
+
+/* Bento niềm tin */
+.bento{list-style:none; margin:36px 0 0; padding:0; display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px}
+.bc{position:relative; overflow:hidden; min-height:250px; padding:24px; padding-right:30%; border-radius:var(--r-lg); border:1px solid var(--line); display:flex; flex-direction:column; gap:8px; transition:transform .25s, box-shadow .25s}
+.bc:hover{transform:translateY(-3px); box-shadow:var(--lift)}
+.bc.wide{grid-column:span 2; padding-right:42%}
+.bc .bi{width:44px; height:44px; border-radius:12px; display:grid; place-items:center; color:var(--surface); margin-bottom:6px}
+.bc h4{font-size:clamp(20px, 2vw, 26px); line-height:1.2; letter-spacing:-.02em}
+.bc.wide h4{font-size:clamp(24px, 2.6vw, 34px)}
+.bc p{font-size:14.5px; color:var(--fg-2)}
+.bc img{position:absolute; right:-8%; bottom:-12%; width:40%; max-width:260px; height:auto; transition:transform .35s}
+.bc.wide img{width:38%; max-width:300px; right:2%}
+.bc:hover img{transform:translateY(-6px) rotate(-3deg)}
+.bc:not(.wide){padding-right:24px; padding-top:28px}
+.bc:not(.wide) img{right:10px; top:6px; bottom:auto; width:104px}
+.bc:not(.wide) .bi{margin-bottom:34px}
+.c-blue{background:color-mix(in oklab, var(--primary) 9%, var(--surface))} .c-blue .bi{background:var(--primary)}
+.c-gold{background:color-mix(in oklab, var(--gold) 13%, var(--surface))} .c-gold .bi{background:var(--gold)}
+.c-green{background:color-mix(in oklab, var(--up) 10%, var(--surface))} .c-green .bi{background:var(--up)}
+.c-sky{background:color-mix(in oklab, var(--cyan) 13%, var(--surface))} .c-sky .bi{background:var(--cyan)}
+.c-rose{background:color-mix(in oklab, oklch(66% .19 30) 10%, var(--surface))} .c-rose .bi{background:oklch(64% .19 30)}
+@media (max-width:900px){ .bento{grid-template-columns:1fr 1fr} .bc.wide{grid-column:span 2} }
+@media (max-width:560px){ .bento{grid-template-columns:1fr} .bc.wide{grid-column:auto; padding-right:36%} .bc{min-height:200px} }
+
+/* Sản phẩm: sân khấu gradient */
+.stage{position:sticky; top:96px; padding:32px 28px 28px; border-radius:24px; background:
+  radial-gradient(circle at 15% 15%, color-mix(in oklab, var(--cyan) 40%, transparent), transparent 55%),
+  radial-gradient(circle at 90% 85%, color-mix(in oklab, var(--violet) 28%, transparent), transparent 55%),
+  linear-gradient(135deg, color-mix(in oklab, var(--primary) 22%, var(--surface)), color-mix(in oklab, var(--cyan) 18%, var(--surface)))}
+.stage .preview{position:relative; top:auto; box-shadow:var(--lift); border:0}
+.stage-mascot{position:absolute; right:-6px; top:-64px; width:120px; height:auto; z-index:2; filter:drop-shadow(0 12px 16px oklch(27% .08 256 / .25))}
+.s-choi{background:radial-gradient(circle at 15% 15%, color-mix(in oklab, var(--gold) 40%, transparent), transparent 55%), linear-gradient(135deg, color-mix(in oklab, var(--gold) 22%, var(--surface)), color-mix(in oklab, oklch(66% .19 30) 14%, var(--surface)))}
+.s-thuc-hanh{background:radial-gradient(circle at 15% 15%, color-mix(in oklab, var(--up) 30%, transparent), transparent 55%), linear-gradient(135deg, color-mix(in oklab, var(--up) 16%, var(--surface)), color-mix(in oklab, var(--cyan) 18%, var(--surface)))}
+.s-cong-dong{background:radial-gradient(circle at 15% 15%, color-mix(in oklab, var(--violet) 26%, transparent), transparent 55%), linear-gradient(135deg, color-mix(in oklab, var(--violet) 14%, var(--surface)), color-mix(in oklab, var(--primary) 16%, var(--surface)))}
+.panel{align-items:start}
+@media (max-width:920px){ .stage{position:relative; top:auto; margin-top:40px; padding:24px 16px 16px} .stage-mascot{width:96px; top:-40px} }
+
+/* Linh thú: thẻ màu theo từng con */
+.lens{background:color-mix(in oklab, var(--acc) 12%, var(--surface)); border:1px solid color-mix(in oklab, var(--acc) 25%, var(--line)); border-radius:var(--r-lg); padding:18px 16px 20px; text-align:center; transition:transform .25s, box-shadow .25s}
+.lens:hover{transform:translateY(-4px); box-shadow:var(--lift)}
+.lens img{background:radial-gradient(circle at 50% 62%, color-mix(in oklab, var(--acc) 30%, transparent), transparent 66%); border-radius:0; max-width:170px; margin:0 auto}
+.lens .layer{display:inline-block; margin-top:8px; padding:4px 12px; border-radius:999px; background:var(--acc); color:var(--surface); letter-spacing:.04em}
+.lenses{gap:16px}
+
+/* CTA sáng trên tranh ngày */
+.cta-light{position:relative; overflow:hidden; isolation:isolate; color:var(--fg)}
+.cta-bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:60% 55%; z-index:-2}
+.cta-light::before{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg, var(--bg) 0%, color-mix(in oklab, var(--bg) 88%, transparent) 38%, color-mix(in oklab, var(--bg) 20%, transparent) 70%, transparent)}
+.cta-light .eyebrow{color:var(--primary)}
+.cta-light .mark{background-image:linear-gradient(transparent 62%, var(--primary-soft) 62%, var(--primary-soft) 94%, transparent 94%); color:var(--primary)}
+.cta-light .cta-row{border-top-color:var(--line); max-width:760px}
+.cta-light .cta-row p{color:var(--fg-2)}
+.cta-light .btn-gold{background:var(--primary); color:var(--primary-ink)}
+.cta-light .btn-gold:hover{background:color-mix(in oklab, var(--primary) 88%, black)}
+.cta-light .btn-line{background:var(--surface); color:var(--fg); border-color:var(--line)}
+.cta-light .btn-line:hover{border-color:var(--primary); color:var(--primary)}
+.cta-light .cta-mascot{top:auto; bottom:0; width:clamp(160px, 24vw, 320px); filter:drop-shadow(0 20px 24px oklch(27% .08 256 / .3))}
+@media (max-width:760px){ .cta-light::before{background:color-mix(in oklab, var(--bg) 82%, transparent)} }
+@media (prefers-reduced-motion: reduce){ .float{animation:none} }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></symbol>
+  <symbol id="i-candle" viewBox="0 0 24 24"><path d="M9 4v3"/><rect x="7" y="7" width="4" height="8" rx="1"/><path d="M9 15v4"/><path d="M17 2v4"/><rect x="15" y="6" width="4" height="6" rx="1"/><path d="M17 12v5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+  <symbol id="i-redo" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-coins" viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M12 8V4H8"/><path d="M2 14h2M20 14h2M9 13v2M15 13v2"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 17v4M17 19h4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 7V4H6l6 8-6 8h12v-3"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+</svg>
+
+<a class="sr-only" href="#main">Bỏ qua điều hướng</a>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="IQX, về đầu trang"><img src="assets/logo-mark.webp" alt="" width="30" height="30">IQX</a>
+    <nav class="nav" aria-label="Điều hướng chính">
+      <a href="#cau-chuyen">Câu chuyện</a>
+      <a href="#san-pham">Sản phẩm</a>
+      <a href="#flashback">Flashback</a>
+      <a href="#lo-trinh">Lộ trình</a>
+      <a href="#ve-iqx">Về IQX</a>
+    </nav>
+    <div class="hdr-cta">
+      <a class="btn btn-primary" href="https://iqx.vn/demo-trading?view=academy" target="_blank" rel="noopener">Bắt đầu <span class="long">học miễn phí</span></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mnav" aria-label="Mở menu"><svg class="icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <nav class="mnav wrap" id="mnav" hidden aria-label="Điều hướng di động">
+    <a href="#cau-chuyen">Câu chuyện</a>
+    <a href="#san-pham">Sản phẩm</a>
+    <a href="#flashback">Flashback</a>
+    <a href="#lo-trinh">Lộ trình</a>
+    <a href="#thi-truong">Thị trường</a>
+    <a href="#ve-iqx">Về IQX</a>
+  </nav>
+</header>
+
+<div class="tape" aria-label="Bảng giá chạy, dữ liệu minh họa">
+  <div class="wrap tape-inner">
+    <span class="tape-label">Minh họa</span>
+    <div class="tape-track"><div class="tape-move" id="tape"></div></div>
+  </div>
+</div>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero2">
+  <img class="hero-bg" src="assets/journey-day.webp" alt="" aria-hidden="true" width="1672" height="941">
+  <div class="wrap">
+    <div class="hero2-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Sân tập đầu tư chứng khoán</span>
+        <h1>Học chuẩn. Chơi thật.<br><span class="grad">Sẵn sàng</span> trước khi xuống tiền.</h1>
+        <p class="hero-lede">IQX là nơi nhà đầu tư Việt học từ nến đầu tiên đến mô hình định lượng, đấu Flashback trên dữ liệu lịch sử thật của thị trường và thực hành bằng vốn ảo. Mỗi bài học bạn hoàn thành trở thành vốn để luyện tập.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://iqx.vn/demo-trading?view=academy" target="_blank" rel="noopener">Bắt đầu học miễn phí <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="#flashback"><svg class="icon"><use href="#i-history"/></svg> Xem Flashback</a>
+        </div>
+        <p class="hero-note"><svg class="icon"><use href="#i-shield"/></svg> Thực hành bằng vốn ảo. Không dùng tiền thật.</p>
+      </div>
+
+      <div class="hero-stage">
+        <img class="hero-mascot" src="assets/thanh-long-hero.webp" alt="Thanh Long, linh thú đồng hành của IQX" width="520" height="520">
+        <div class="float f1" aria-hidden="true">
+          <span class="fi gold"><svg class="icon"><use href="#i-coins"/></svg></span>
+          <span><b class="num">+100 xu</b><small>Hoàn thành bài RSI</small></span>
+        </div>
+        <div class="float f2" aria-hidden="true">
+          <img src="assets/bach-ho.webp" alt="">
+          <span><b>Hạng 1/4 · Flashback</b><small class="up num">+12,4% · Phòng #482917</small></span>
+        </div>
+        <div class="float f3" aria-hidden="true">
+          <span><small>VN-Index · minh họa</small><b class="num">1.734,93 <em class="up">+0,01%</em></b></span>
+          <svg viewBox="0 0 120 36" class="spark"><path d="M0 28 L12 24 L22 26 L34 18 L46 20 L58 12 L70 15 L82 9 L94 13 L106 6 L120 8" fill="none" stroke="var(--up)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="proof2" aria-label="IQX bằng con số">
+      <div><b>3 sàn</b><span>HOSE · HNX · UPCOM</span></div>
+      <div><b>38</b><span>chỉ báo kỹ thuật</span></div>
+      <div><b>97</b><span>bài trong Học viện</span></div>
+      <div><b>5</b><span>khóa tài chính định lượng</span></div>
+      <div><b>7</b><span>cấp rèn luyện</span></div>
+      <div><b>100tr</b><span>vốn mô phỏng mặc định</span></div>
+    </div>
+
+    <div class="pillars" aria-label="Vòng lặp Học, Chơi, Thực hành">
+      <a class="pillar p-hoc" href="#san-pham" data-tab="hoc">
+        <span class="pi"><svg class="icon"><use href="#i-book"/></svg></span>
+        <span class="pk">Bước 1</span><b>Học</b>
+        <p>Học viện 97 bài, Candle Dojo và 5 khóa định lượng. Mỗi bài thưởng 100 xu.</p>
+        <span class="pmore">Xem khu Học <svg class="icon"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="pillar p-choi" href="#san-pham" data-tab="choi">
+        <span class="pi"><svg class="icon"><use href="#i-history"/></svg></span>
+        <span class="pk">Bước 2</span><b>Chơi</b>
+        <p>Flashback trên lịch sử thật, linh thú tiến hóa, xu thưởng theo thứ hạng.</p>
+        <span class="pmore">Xem khu Chơi <svg class="icon"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="pillar p-th" href="#san-pham" data-tab="thuc-hanh">
+        <span class="pi"><svg class="icon"><use href="#i-candle"/></svg></span>
+        <span class="pk">Bước 3</span><b>Thực hành</b>
+        <p>Demo Trading bằng vốn ảo, Bot tự thiết lập, Backtest và Bộ lọc.</p>
+        <span class="pmore">Xem khu Thực hành <svg class="icon"><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="cau-chuyen" aria-labelledby="mission-h">
+  <div class="mission">
+    <img class="mission-bg" src="assets/journey-night.webp" alt="" aria-hidden="true" loading="lazy" width="1672" height="941">
+    <div class="wrap">
+      <span class="eyebrow">Sứ mệnh IQX</span>
+      <h2 id="mission-h">Xây dựng cộng đồng nhà đầu tư Việt <span class="mark">học bài bản</span>, <span class="mark">chơi cạnh tranh</span> và <span class="mark">quyết định có hệ thống</span>.</h2>
+      <div class="mission-foot">
+        <p class="mission-lede">Thị trường không cho làm lại. Vì vậy IQX dựng một sân tập, nơi mỗi sai lầm chỉ tốn xu, còn mỗi bài học thì ở lại với bạn.</p>
+        <dl class="mission-facts">
+          <div><dt>Thành lập</dt><dd>08/2025</dd></div>
+          <div><dt>Trụ sở</dt><dd>TP.HCM</dd></div>
+          <div><dt>Tiền thật khi luyện</dt><dd>0đ</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <article class="chapter">
+      <div class="ch-label"><span class="ch-num">01</span><span class="ch-name">Vấn đề</span></div>
+      <div class="ch-body">
+        <h3>Đa số nhà đầu tư mới trả học phí bằng tiền thật.</h3>
+        <p class="ch-lead">Họ mở tài khoản, mua theo tin đồn, thua lỗ, rồi mới bắt đầu tìm hiểu. IQX đảo ngược thứ tự đó: học, chơi và thực hành trước, đầu tư thật sau.</p>
+        <div class="tracks">
+          <div class="track bad">
+            <div class="track-h"><h4>Con đường quen thuộc</h4><span class="fee">Học phí: tiền thật</span></div>
+            <ol class="line">
+              <li class="stop"><i></i><span><b>Mở tài khoản</b><span>Hào hứng, chưa có phương pháp</span></span></li>
+              <li class="stop"><i></i><span><b>Mua theo tin đồn</b><span>Quyết định dựa vào hội nhóm</span></span></li>
+              <li class="stop loss"><i></i><span><b>Thua lỗ</b><span>Bài học đầu tiên trả bằng vốn</span></span></li>
+              <li class="stop"><i></i><span><b>Mới bắt đầu học</b><span>Khi vốn và niềm tin đã mỏng</span></span></li>
+            </ol>
+          </div>
+          <div class="track good">
+            <div class="track-h"><h4>Con đường IQX</h4><span class="fee">Học phí: thời gian và xu</span></div>
+            <ol class="line">
+              <li class="stop"><i></i><span><b>Học có hệ thống</b><span>97 bài, Candle Dojo, 5 khóa quant</span></span></li>
+              <li class="stop"><i></i><span><b>Chơi trên lịch sử</b><span>Flashback với dữ liệu thật</span></span></li>
+              <li class="stop"><i></i><span><b>Thực hành vốn ảo</b><span>Demo Trading, Bot, Backtest</span></span></li>
+              <li class="stop win"><i></i><span><b>Đầu tư thật</b><span>Có kế hoạch, cắt lỗ và kỷ luật</span></span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="chapter">
+      <div class="ch-label"><span class="ch-num">02</span><span class="ch-name">Niềm tin</span></div>
+      <div class="ch-body">
+        <h3>Năm nguyên tắc định hình mọi sản phẩm của IQX</h3>
+        <ul class="bento">
+          <li class="bc wide c-blue"><span class="bi"><svg class="icon"><use href="#i-shield"/></svg></span><h4>Sai ở sân tập, để đúng ở thị trường.</h4><p>Vốn ảo và dữ liệu lịch sử thật cho phép bạn thử, thua và thử lại mà không mất đồng nào.</p><img src="assets/bach-ho.webp" alt="" loading="lazy"></li>
+          <li class="bc c-gold"><span class="bi"><svg class="icon"><use href="#i-coins"/></svg></span><h4>Kiến thức là vốn.</h4><p>1 bài học = 100 xu = 1.000.000đ vốn luyện tập.</p><img src="assets/kim-quy.webp" alt="" loading="lazy"></li>
+          <li class="bc c-green"><span class="bi"><svg class="icon"><use href="#i-target"/></svg></span><h4>Kỷ luật đi trước lợi nhuận.</h4><p>7 cấp rèn từng thói quen: kế hoạch, cắt lỗ, quản lý vốn.</p><img src="assets/loc-huou.webp" alt="" loading="lazy"></li>
+          <li class="bc c-sky"><span class="bi"><svg class="icon"><use href="#i-sigma"/></svg></span><h4>Đi đến tận gốc định lượng.</h4><p>Backtest, xác suất, chuỗi thời gian, tối ưu danh mục.</p><img src="assets/thanh-long.webp" alt="" loading="lazy"></li>
+          <li class="bc c-rose"><span class="bi"><svg class="icon"><use href="#i-users"/></svg></span><h4>Học cùng nhau thì đi xa hơn.</h4><p>Phòng Flashback, Khu giao dịch và SACO nhận định.</p><img src="assets/phung-hoang.webp" alt="" loading="lazy"></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="chapter">
+      <div class="ch-label"><span class="ch-num">03</span><span class="ch-name">Động cơ</span></div>
+      <div class="ch-body">
+        <h3>Bạn không nạp tiền để luyện tập. Bạn học để có vốn.</h3>
+        <p class="ch-lead">Xu là sợi chỉ nối mọi sản phẩm của IQX. Học để kiếm xu, chơi để thử, thực hành để kiểm chứng, rồi quay lại học tiếp.</p>
+        <div class="equation" aria-label="1 bài học bằng 100 xu bằng 1.000.000 đồng vốn Demo Trading">
+          <div class="eq-term"><b>1</b><span>bài học</span></div>
+          <span class="eq-op" aria-hidden="true">=</span>
+          <div class="eq-term xu"><b>100</b><span>xu</span></div>
+          <span class="eq-op" aria-hidden="true">=</span>
+          <div class="eq-term vnd"><b>1.000.000đ</b><span>vốn Demo Trading</span></div>
+        </div>
+        <div class="flow" aria-label="Dòng chảy của xu IQX">
+          <div class="flow-col src">
+            <h5>Kiếm xu</h5>
+            <div class="fnode"><span class="fi"><svg class="icon"><use href="#i-book"/></svg></span><span><b>Học viện</b><small><em>+100 xu</em> mỗi bài hoàn thành</small></span></div>
+            <div class="fnode"><span class="fi"><svg class="icon"><use href="#i-candle"/></svg></span><span><b>Candle Dojo</b><small>Lên đai, <em>xu mỗi ngày</em> khi luyện công</small></span></div>
+            <div class="fnode"><span class="fi"><svg class="icon"><use href="#i-history"/></svg></span><span><b>Flashback</b><small><em>Thưởng xu</em> theo thứ hạng</small></span></div>
+          </div>
+          <div class="wallet"><div><svg class="icon"><use href="#i-coins"/></svg><b>Ví xu</b><small>của người học</small></div></div>
+          <div class="flow-col out">
+            <h5>Dùng xu</h5>
+            <div class="fnode"><span class="fi"><svg class="icon"><use href="#i-chart"/></svg></span><span><b>Vốn Demo Trading</b><small><em>100 xu</em> đổi 1.000.000đ</small></span></div>
+            <div class="fnode"><span class="fi"><svg class="icon"><use href="#i-spark"/></svg></span><span><b>Linh thú và thẻ nến</b><small>Mua, tiến hóa, mang vào Flashback</small></span></div>
+            <div class="fnode"><span class="fi"><svg class="icon"><use href="#i-shield"/></svg></span><span><b>Cược Flashback, Premium</b><small>Đổi Premium bằng xu</small></span></div>
+          </div>
+        </div>
+        <p class="closing">Từ tháng 8/2025, IQX đã xây <strong>97 bài học</strong>, <strong>38 chỉ báo</strong> trên <strong>3 sàn</strong>, <strong>5 khóa định lượng</strong> miễn phí và một trò chơi biến lịch sử thị trường thành sân đấu. <span class="q">Tất cả để trả lời một câu hỏi: khi bước vào thị trường thật, bạn đã sẵn sàng chưa?</span></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- PRODUCTS -->
+<section class="sec ruled" id="san-pham">
+  <div class="wrap">
+    <header class="chead">
+      <div class="ch-label"><span class="ch-num">04</span><span class="ch-name">Sản phẩm</span></div>
+      <div><h2>Bốn khu, một hành trình</h2><p>Mỗi sản phẩm của IQX nằm ở một khu: Học, Chơi, Thực hành hoặc Cộng đồng. Chọn một khu để xem bên trong có gì.</p></div>
+    </header>
+    <div class="tabs" role="tablist" aria-label="Nhóm sản phẩm" id="tabs"></div>
+    <div id="panels"></div>
+  </div>
+</section>
+
+<!-- FLASHBACK -->
+<section class="fb sec dark-band" id="flashback">
+  <canvas class="candles" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <header class="chead">
+      <div class="ch-label"><span class="ch-num">05</span><span class="ch-name">Flashback</span></div>
+      <div><span class="eyebrow">Sản phẩm nổi bật</span><h2 style="margin-top:14px">Nếu bạn ở thị trường ngày đó, bạn sẽ làm gì?</h2><p>Flashback cắt một đoạn lịch sử thật của thị trường, giấu tên mã và thời gian, rồi cho bạn và bạn bè ra quyết định từng phiên. Hết ván, mã và giai đoạn được lật mở, cùng bảng xếp hạng và xu thưởng.</p></div>
+    </header>
+
+    <div class="fb-grid">
+      <div class="fb-board">
+        <div class="fb-top">
+          <div class="fb-meta">
+            <span class="fb-pill hot">Phòng #<span class="num">482 917</span></span>
+            <span class="fb-pill">Mã: <b id="fbSym">ẩn</b></span>
+            <span class="fb-pill">Phiên <span class="num" id="fbStep">0</span>/<span class="num" id="fbTotal">50</span></span>
+          </div>
+          <div class="fb-ctrl">
+            <button type="button" id="fbToggle" aria-label="Tạm dừng mô phỏng"><svg class="icon"><use href="#i-pause"/></svg><span>Dừng</span></button>
+            <button type="button" id="fbRestart" aria-label="Chơi lại từ đầu"><svg class="icon"><use href="#i-redo"/></svg></button>
+          </div>
+        </div>
+        <div class="fb-chart-wrap">
+          <svg class="fb-chart" id="fbChart" viewBox="0 0 640 300" role="img" aria-label="Biểu đồ nến Flashback, mô phỏng tự chạy"></svg>
+          <div class="fb-reveal" id="fbReveal" hidden>
+            <div>
+              <p class="tagline">Lật mở</p>
+              <h3>VN-Index · 01/2022 đến 12/2022</h3>
+              <p id="fbLesson"></p>
+            </div>
+          </div>
+        </div>
+        <p class="fb-log" id="fbLog" aria-live="polite">Đang xem 14 phiên đầu để đọc bối cảnh…</p>
+      </div>
+
+      <div class="fb-side">
+        <div class="lb">
+          <h3>Bảng xếp hạng <span class="demo-tag" style="background:oklch(27% .03 260); color:oklch(84% .02 256)">Minh họa</span></h3>
+          <ol id="fbBoard"></ol>
+        </div>
+        <div class="how">
+          <h3>Cách chơi</h3>
+          <ol>
+            <li><span><b>Tạo phòng</b> hoặc nhập ID phòng 6 chữ số. Chơi một mình hoặc cùng bạn bè, có chat và biểu cảm.</span></li>
+            <li><span><b>Sẵn sàng.</b> Xem trước một số phiên để đọc bối cảnh, tên mã và thời gian được giấu.</span></li>
+            <li><span><b>Ra quyết định từng phiên:</b> mua, bán hoặc giữ. Thẻ nến từ Candle Dojo hiện lên khi gặp đúng mẫu.</span></li>
+            <li><span><b>Lật mở:</b> biết mã và giai đoạn thật, xem hạng, nhận điểm cấp và xu.</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="fb-foot">
+      <p>Mô phỏng dựng theo diễn biến VN-Index năm 2022, giá trị đã làm tròn để minh họa. Bốn người chơi là bốn linh thú, mỗi con một phong cách.</p>
+      <a class="btn btn-ghost" href="https://iqx.vn/demo-trading?view=flashback" target="_blank" rel="noopener">Vào phòng Flashback <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="sec" id="lo-trinh">
+  <div class="wrap">
+    <header class="chead">
+      <div class="ch-label"><span class="ch-num">06</span><span class="ch-name">Lộ trình</span></div>
+      <div><h2>Từ lệnh đầu tiên đến tư duy của bậc thầy</h2><p>Bảy cấp, mỗi cấp gắn với một kỹ năng và các nhiệm vụ thực hành cụ thể trong Demo Trading. Chọn một trạm trên tuyến để xem bạn sẽ làm gì.</p></div>
+    </header>
+    <div class="levels" id="levels" role="group" aria-label="Chọn cấp"></div>
+    <div class="lv-detail" id="lvDetail" aria-live="polite"></div>
+
+    <div class="sec-head" style="margin:56px 0 0">
+      <span class="eyebrow">Năm linh thú, năm lăng kính</span>
+      <h3 style="font-size:24px">Linh thú của bạn được xác định từ cách bạn đọc thị trường</h3>
+      <p>Học xong Cấp 6, bạn mở khóa linh thú của riêng mình. Mỗi linh thú phản ánh lớp thông tin bạn dựa vào nhiều nhất khi ra quyết định.</p>
+    </div>
+    <div class="lenses" id="lenses"></div>
+  </div>
+</section>
+
+<!-- MARKET -->
+<section class="sec ruled" id="thi-truong">
+  <div class="wrap">
+    <header class="chead">
+      <div class="ch-label"><span class="ch-num">07</span><span class="ch-name">Thị trường</span></div>
+      <div><h2>Đọc thị trường như đang ở sàn</h2><p>Demo Trading dùng bảng giá, biểu đồ và chỉ số của cả ba sàn. Bản tin cuối phiên và lịch sự kiện giúp bạn nối dữ liệu với bối cảnh.</p></div>
+    </header>
+    <div class="mkt-grid">
+      <div class="card">
+        <div class="card-h"><h3>Bảng điện</h3><span class="demo-tag">Giá minh họa, không phải dữ liệu thật</span></div>
+        <div class="idx-row" id="idxRow"></div>
+        <div class="tbl-wrap">
+          <table class="board" aria-label="Bảng giá minh họa">
+            <thead><tr><th scope="col">Mã</th><th scope="col">Tham chiếu</th><th scope="col">Khớp</th><th scope="col">+/-</th><th scope="col">%</th><th scope="col">KL</th></tr></thead>
+            <tbody id="board"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-h"><h3>Lịch sự kiện</h3><span class="demo-tag">Minh họa</span></div>
+        <ul class="cal" id="cal"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY + PLANS -->
+<section class="sec story" id="vi-sao">
+  <div class="wrap">
+    <header class="chead">
+      <div class="ch-label"><span class="ch-num">08</span><span class="ch-name">Vì sao IQX</span></div>
+      <div><h2>Một nơi cho cả kiến thức, trải nghiệm và cộng đồng</h2><p>Bắt đầu miễn phí với toàn bộ nền tảng học và chơi. Premium dành cho người muốn đi sâu vào công cụ và phân tích.</p></div>
+    </header>
+    <div class="why">
+      <div><b>Học có lộ trình</b><p>97 bài theo chương, 7 cấp kỹ năng và bài thi đai. Biết mình đang ở đâu và cần làm gì tiếp.</p></div>
+      <div><b>Trải nghiệm không rủi ro</b><p>Vốn ảo và dữ liệu lịch sử thật. Sai ở đây để không sai khi dùng tiền thật.</p></div>
+      <div><b>Đến tận định lượng</b><p>Backtest, bộ lọc, cảnh báo và 5 khóa quant miễn phí, từ xác suất đến tối ưu danh mục.</p></div>
+      <div><b>Có bạn đồng hành</b><p>Phòng Flashback, Khu giao dịch, nhận định từ SACO và trợ lý AI trả lời khi bạn bí.</p></div>
+    </div>
+
+    <div class="plans">
+      <div class="plan">
+        <h3>Miễn phí</h3>
+        <p class="price">0đ <small>để bắt đầu</small></p>
+        <ul>
+          <li><svg class="icon"><use href="#i-check"/></svg>Học viện và 5 khóa Kiến thức định lượng</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Candle Dojo: đai, sao, luyện công mỗi ngày</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Demo Trading bằng vốn đổi từ xu học tập</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Flashback một mình hoặc cùng bạn bè</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Khu giao dịch và SACO nhận định</li>
+        </ul>
+        <a class="btn btn-primary" href="https://iqx.vn/demo-trading?view=academy" target="_blank" rel="noopener">Bắt đầu học miễn phí</a>
+      </div>
+      <div class="plan pro">
+        <h3>Premium <span class="demo-tag">Quyền lợi chờ IQX xác nhận</span></h3>
+        <p class="price">Sắp công bố</p>
+        <ul>
+          <li><svg class="icon"><use href="#i-check"/></svg>Mở rộng Bot và Chiến lược: cảnh báo, backtest, bộ lọc</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Phân tích AI chuyên sâu: bản tin, báo cáo tài chính dễ hiểu</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Ưu tiên nhận định và trao đổi với SACO</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Nhiều phòng Flashback và mức cược cao hơn</li>
+        </ul>
+        <p class="note">Nhận Premium bằng ba cách: trả phí, đổi bằng xu (tài khoản đã xác thực số điện thoại), hoặc qua ưu đãi mã đội nhóm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec about" id="ve-iqx" style="border-top:0">
+  <div class="wrap">
+    <header class="chead">
+      <div class="ch-label"><span class="ch-num">09</span><span class="ch-name">Về IQX</span></div>
+      <div><span class="eyebrow">Dành cho đối tác</span><h2 style="margin-top:14px">Mô hình vận hành và định hướng</h2><p>IQX tăng trưởng nhờ một vòng lặp: người học càng tiến bộ càng có nhiều lý do quay lại, và cộng đồng càng đông thì Flashback càng hấp dẫn.</p></div>
+    </header>
+    <div class="model">
+      <div class="card"><h3><svg class="icon"><use href="#i-users"/></svg>Thu hút bằng giáo dục</h3><p>Học viện, khóa quant và Candle Dojo miễn phí kéo người dùng mới. Xu học tập biến việc học thành vốn luyện tập, giữ chân người dùng mỗi ngày.</p></div>
+      <div class="card"><h3><svg class="icon"><use href="#i-coins"/></svg>Kiếm tiền bằng chiều sâu</h3><p>Premium mở công cụ chuyên sâu. Xu lưu thông qua linh thú, thẻ nến và Flashback. Đội nhóm và mã giới thiệu mở rộng kênh phân phối.</p></div>
+      <div class="card"><h3><svg class="icon"><use href="#i-spark"/></svg>Khác biệt bằng nội dung và AI</h3><p>SACO đăng nhận định hằng ngày. Claude của Anthropic hỗ trợ bản tin thị trường, giải thích báo cáo tài chính và trợ lý học trả lời, nhận xét lệnh mô phỏng.</p></div>
+    </div>
+
+    <div class="road" aria-label="Lộ trình phát triển">
+      <div class="ms"><small>08/2025</small><b>Thành lập</b><p>Công ty TNHH Viet Nam Stock Express (VNSE) ra mắt IQX tại TP. Hồ Chí Minh.</p></div>
+      <div class="ms"><small>2026 · Hiện tại</small><b>Học, Chơi, Thực hành</b><p>Học viện, Candle Dojo, Flashback, Demo Trading, Bot, Chiến lược, Khu giao dịch.</p></div>
+      <div class="ms plan-ms"><small>Dự kiến · 2027</small><b>Mùa giải Flashback</b><p>Giải đấu theo mùa, bảng xếp hạng toàn quốc, phòng đấu cho câu lạc bộ và trường đại học.</p></div>
+      <div class="ms plan-ms"><small>Dự kiến · Sau 2027</small><b>Cầu nối đầu tư thật</b><p>Ứng dụng di động và hợp tác công ty chứng khoán để người học sẵn sàng chuyển sang tài khoản thật.</p></div>
+    </div>
+
+    <div class="company">
+      <div class="card">
+        <h3 style="font-size:18px; display:flex; gap:10px; align-items:center"><svg class="icon" style="color:var(--primary)"><use href="#i-building"/></svg>Thông tin doanh nghiệp</h3>
+        <dl class="facts" style="margin-top:14px">
+          <dt>Đơn vị vận hành</dt><dd>Công ty TNHH Viet Nam Stock Express (VNSE)</dd>
+          <dt>Thành lập</dt><dd>Tháng 8/2025, TP. Hồ Chí Minh</dd>
+          <dt>Mã số thuế</dt><dd class="num">0319077430</dd>
+          <dt>Địa chỉ</dt><dd>702A, Tầng 7, Centre Point, 106 Nguyễn Văn Trỗi, Phú Nhuận, TP. Hồ Chí Minh</dd>
+          <dt>Website</dt><dd>iqx.vn</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <h3 style="font-size:18px">Đội ngũ</h3>
+        <p style="color:var(--fg-2); margin-top:10px; font-size:15px">IQX được xây dựng bởi đội sáng lập VNSE, kết hợp kinh nghiệm thị trường vốn Việt Nam, giáo dục nhà đầu tư và kỹ thuật phần mềm.</p>
+        <p class="demo-tag" style="margin-top:14px">Chỗ dành cho ảnh và tiểu sử đội ngũ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band cta-light" aria-labelledby="cta-h">
+  <img class="cta-bg" src="assets/journey-day.webp" alt="" aria-hidden="true" loading="lazy" width="1672" height="941">
+  <div class="wrap">
+    <img class="cta-mascot" src="assets/bach-ho.webp" alt="" aria-hidden="true" loading="lazy">
+    <span class="eyebrow">Bắt đầu hôm nay</span>
+    <h2 id="cta-h">Bài học đầu tiên chỉ mất <span class="mark">vài phút</span>.</h2>
+    <div class="cta-row">
+      <p>Hoàn thành một bài, nhận 100 xu, đổi thành 1.000.000đ vốn ảo và đặt lệnh đầu tiên ngay hôm nay. Không cần nạp tiền.</p>
+      <div class="btns">
+        <a class="btn btn-gold" href="https://iqx.vn/demo-trading?view=academy" target="_blank" rel="noopener">Bắt đầu học miễn phí <svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-line" href="https://iqx.vn/demo-trading?view=flashback" target="_blank" rel="noopener">Chơi Flashback</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <a class="brand" href="#top" style="font-size:20px"><img src="assets/logo-mark.webp" alt="" width="26" height="26" style="width:26px;height:26px">IQX</a>
+        <p style="margin-top:14px">Sân tập đầu tư chứng khoán cho nhà đầu tư Việt: học chuẩn, chơi thật, sẵn sàng trước khi xuống tiền.</p>
+      </div>
+      <nav aria-label="Sản phẩm">
+        <h3>Sản phẩm</h3>
+        <a href="https://iqx.vn/demo-trading?view=academy" target="_blank" rel="noopener">Học viện</a>
+        <a href="https://iqx.vn/demo-trading?view=candle-dojo" target="_blank" rel="noopener">Candle Dojo</a>
+        <a href="https://iqx.vn/demo-trading?view=flashback" target="_blank" rel="noopener">Flashback</a>
+        <a href="https://iqx.vn/demo-trading?view=trading" target="_blank" rel="noopener">Demo Trading</a>
+        <a href="https://iqx.vn/chien-luoc" target="_blank" rel="noopener">Chiến lược</a>
+      </nav>
+      <nav aria-label="Khám phá">
+        <h3>Khám phá</h3>
+        <a href="#cau-chuyen">Câu chuyện</a>
+        <a href="#lo-trinh">Lộ trình 7 cấp</a>
+        <a href="https://iqx.vn/bai-hoc" target="_blank" rel="noopener">Kiến thức định lượng</a>
+        <a href="https://iqx.vn/khu-giao-dich" target="_blank" rel="noopener">Khu giao dịch</a>
+        <a href="#ve-iqx">Về IQX</a>
+      </nav>
+      <div>
+        <h3>Công ty</h3>
+        <p>Công ty TNHH Viet Nam Stock Express (VNSE)<br>MST <span class="num">0319077430</span><br>702A, Tầng 7, Centre Point, 106 Nguyễn Văn Trỗi, Phú Nhuận, TP. Hồ Chí Minh</p>
+      </div>
+    </div>
+    <p class="disc">IQX cung cấp công cụ phân tích và giáo dục, không phải khuyến nghị đầu tư. Kết quả giao dịch mô phỏng không đảm bảo kết quả thực tế. IQX là sản phẩm của Công ty TNHH Viet Nam Stock Express (VNSE), MST 0319077430, 702A, Tầng 7, Centre Point, 106 Nguyễn Văn Trỗi, Phú Nhuận, TP. Hồ Chí Minh.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = (s, r=document) => r.querySelector(s);
+const ic = id => `<svg class="icon" aria-hidden="true"><use href="#i-${id}"/></svg>`;
+const fmt = (n, d=0) => n.toLocaleString('vi-VN', {minimumFractionDigits:d, maximumFractionDigits:d});
+
+/* ---------- Mobile menu ---------- */
+const mb = $('#menuBtn'), mn = $('#mnav');
+mb.addEventListener('click', () => { const o = mn.hidden; mn.hidden = !o; mb.setAttribute('aria-expanded', String(o)); });
+mn.addEventListener('click', e => { if (e.target.tagName === 'A') { mn.hidden = true; mb.setAttribute('aria-expanded','false'); } });
+
+/* ---------- Mission: nền nến + tô sáng ---------- */
+(function(){
+  const canvases = [...document.querySelectorAll('canvas.candles')];
+  function drawAll(){ canvases.forEach((cv, k) => draw(cv, k)); }
+  function draw(cv, k){
+    const ctx = cv.getContext('2d');
+    const r = cv.getBoundingClientRect(), dpr = Math.min(2, window.devicePixelRatio||1);
+    cv.width = r.width*dpr; cv.height = r.height*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,r.width,r.height);
+    let s = 3 + k*101; const rn = () => (s = (s*16807)%2147483647)/2147483647;
+    const step = 14, n = Math.ceil(r.width/step)+1; let v = r.height*0.62;
+    for (let i=0;i<n;i++){
+      const drift = -r.height*0.0035 + (rn()-0.5)*r.height*0.05;
+      const o = v, c = Math.min(r.height*0.88, Math.max(r.height*0.18, v + drift));
+      const hi = Math.min(o,c) - rn()*r.height*0.03, lo = Math.max(o,c) + rn()*r.height*0.03;
+      const up = c < o, x = i*step + 4;
+      const gold = i % 23 === 11;
+      ctx.strokeStyle = ctx.fillStyle = gold ? 'rgba(242,196,92,.6)' : up ? 'rgba(120,200,160,.24)' : 'rgba(170,190,230,.18)';
+      ctx.fillRect(x+3, hi, 1, lo-hi);
+      ctx.fillRect(x, Math.min(o,c), 7, Math.max(2, Math.abs(c-o)));
+      v = c;
+    }
+  }
+  drawAll(); let t; window.addEventListener('resize', ()=>{ clearTimeout(t); t = setTimeout(drawAll, 150); });
+  if (!RM && 'IntersectionObserver' in window){
+    const heads = [...new Set([...document.querySelectorAll('.mark')].map(m => m.parentElement))].filter(h => h.getBoundingClientRect().top > window.innerHeight);
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.remove('hl-wait'); io.unobserve(e.target); } }), {threshold:.6});
+    heads.forEach(h => { h.classList.add('hl-wait'); io.observe(h); });
+  }
+})();
+
+/* ---------- Mascots ---------- */
+const MASCOTS = [
+  {id:'bach-ho', acc:'oklch(60% .17 258)', name:'Bạch Hổ', layer:'Kỹ thuật', desc:'Đọc giá, nến và chỉ báo để tìm điểm vào ra.'},
+  {id:'thanh-long', acc:'oklch(70% .13 210)', name:'Thanh Long', layer:'Dòng tiền', desc:'Theo dấu khối lượng và dòng tiền lớn.'},
+  {id:'loc-huou', acc:'oklch(74% .14 70)', name:'Lộc Hươu', layer:'Nội bộ', desc:'Để ý giao dịch của người nội bộ và cổ đông lớn.'},
+  {id:'phung-hoang', acc:'oklch(66% .19 30)', name:'Phụng Hoàng', layer:'Tin tức', desc:'Nối tin tức và sự kiện với phản ứng giá.'},
+  {id:'kim-quy', acc:'oklch(66% .15 150)', name:'Kim Quy', layer:'Định giá', desc:'Kiên nhẫn mua doanh nghiệp tốt ở giá hợp lý.'}
+];
+$('#lenses').innerHTML = MASCOTS.map(m => `<div class="lens" style="--acc:${m.acc}"><img src="assets/${m.id}.webp" alt="${m.name}" loading="lazy" width="130" height="130"><b>${m.name}</b><span class="layer">${m.layer}</span><p>${m.desc}</p></div>`).join('');
+
+/* ---------- Products (thêm sản phẩm mới: thêm một mục vào items) ---------- */
+const GROUPS = [
+  { id:'hoc', label:'Học', icon:'book', mascot:'bach-ho', title:'Kiến thức chuẩn, từ nến đầu tiên đến mô hình định lượng',
+    lede:'Lộ trình học theo chương, có bài thi và phần thưởng. Học xong là dùng được ngay trong Flashback và Demo Trading.',
+    url:'assets/hoc.png',
+    items:[
+      {icon:'book', name:'Học viện', desc:'97 bài theo chương: Nền tảng, Phương pháp kỹ thuật và hơn thế. Theo dõi tiến độ, mỗi bài hoàn thành nhận 100 xu.', chips:['Biểu đồ nến','Xu hướng','Hỗ trợ, kháng cự','MA','RSI','MACD','Bollinger','Fibonacci','Sóng Elliott'], href:'https://iqx.vn/demo-trading?view=academy'},
+      {icon:'candle', name:'Candle Dojo', desc:'Võ đường mẫu nến: học từng mẫu, thi lên đai (8 câu, đúng 6 để đạt), luyện công mỗi ngày nhận xu, mở thẻ nến dùng trong Flashback.', chips:['Đai và sao','Thẻ nến','Luyện công mỗi ngày'], href:'https://iqx.vn/demo-trading?view=candle-dojo'},
+      {icon:'sigma', name:'Kiến thức định lượng', desc:'5 khóa miễn phí cho người muốn đi sâu: xác suất, thống kê suy luận, chuỗi thời gian, machine learning, tối ưu danh mục và quản trị rủi ro.', chips:['Markowitz','Black-Litterman','VaR / CVaR','Kelly','Walk-forward CV'], href:'https://iqx.vn/bai-hoc'}
+    ], preview:'hoc'},
+  { id:'choi', label:'Chơi', icon:'history', mascot:'phung-hoang', title:'Học qua cạnh tranh, có phần thưởng thật trong hệ thống',
+    lede:'Trò chơi ở IQX luôn gắn với một kỹ năng đầu tư. Thắng nhận xu, xu lại thành vốn luyện tập.',
+    items:[
+      {icon:'history', name:'Flashback', desc:'Đấu trên đoạn lịch sử thật của thị trường, tên mã và thời gian được giấu. Tạo phòng, mời bạn, ra quyết định từng phiên và lật mở cuối ván.', chips:['Phòng nhiều người','Cược xu','Bảng xếp hạng','Chat, biểu cảm'], gold:true, href:'#flashback'},
+      {icon:'spark', name:'Linh thú và Shop', desc:'5 linh thú, mỗi con một lăng kính đọc thị trường. Mua, sử dụng và tiến hóa linh thú bằng xu; mua thẻ nến cho Flashback.', chips:['Bạch Hổ','Thanh Long','Lộc Hươu','Phụng Hoàng','Kim Quy'], href:'https://iqx.vn/demo-trading?view=shop'},
+      {icon:'coins', name:'Xu IQX', desc:'Đơn vị thưởng xuyên suốt: kiếm từ học, Dojo và Flashback; dùng để đổi vốn Demo, mua linh thú, cược Flashback hoặc đổi Premium.', chips:['1 bài = 100 xu','100 xu = 1.000.000đ vốn ảo'], href:'#cau-chuyen'}
+    ], preview:'choi'},
+  { id:'thuc-hanh', label:'Thực hành', icon:'candle', mascot:'thanh-long', title:'Giao dịch như thật với vốn ảo, đo bằng số liệu',
+    lede:'Môi trường giao dịch mô phỏng đầy đủ với dữ liệu của HOSE, HNX và UPCOM, cùng công cụ để kiểm chứng ý tưởng trước khi dùng.',
+    items:[
+      {icon:'candle', name:'Demo Trading', desc:'Bảng giá, biểu đồ nến, tuyến tính, log và %, 38 chỉ báo kỹ thuật, công cụ vẽ, đặt lệnh giới hạn theo lô 100. Theo dõi danh mục và lãi lỗ.', chips:['3 sàn','38 chỉ báo','Vốn mặc định 100tr'], href:'https://iqx.vn/demo-trading?view=trading'},
+      {icon:'bot', name:'Bot', desc:'Tự thiết lập điều kiện mua bán cho Bot từ chỉ báo bạn đã học, rồi quan sát Bot thực hành với vốn ảo và nguyên tắc rõ ràng.', chips:['Điều kiện tùy chỉnh','Vốn ảo'], href:'https://iqx.vn/demo-trading?view=bot'},
+      {icon:'target', name:'Chiến lược', desc:'Cảnh báo tín hiệu, Backtest để kiểm thử chiến lược trên dữ liệu quá khứ và Bộ lọc để sàng lọc doanh nghiệp.', chips:['Cảnh báo','Backtest','Bộ lọc'], href:'https://iqx.vn/chien-luoc'},
+      {icon:'spark', name:'Phân tích AI', desc:'Bản tin thị trường hằng ngày, nhận định cổ phiếu và giải thích báo cáo tài chính bằng ngôn ngữ dễ hiểu, hỗ trợ bởi Claude.', chips:['Bản tin cuối phiên','Báo cáo tài chính'], href:'https://iqx.vn/about'}
+    ], preview:'thuc-hanh'},
+  { id:'cong-dong', label:'Cộng đồng', icon:'users', mascot:'loc-huou', title:'Không ai phải học đầu tư một mình',
+    lede:'Gặp người cùng sở thích, đọc nhận định của chuyên gia và cùng nhau vào phòng Flashback.',
+    items:[
+      {icon:'building', name:'Khu giao dịch', desc:'Văn phòng ảo của IQX: chọn nhân vật, đi dạo, trò chuyện và xem bảng điện. Vào được ngay, không cần tài khoản.', chips:['10 nhân vật','Không cần tài khoản'], href:'https://iqx.vn/khu-giao-dich'},
+      {icon:'chat', name:'SACO nhận định', desc:'Chuyên gia SACO đăng nhận định mỗi ngày. Thả tim, bình luận và nhắn trực tiếp cho SACO khi cần hỏi thêm.', chips:['Nhận định hằng ngày','Nhắn SACO'], href:'https://iqx.vn/khu-giao-dich'},
+      {icon:'users', name:'Đội nhóm', desc:'Trưởng nhóm có mã giới thiệu riêng kèm ưu đãi Premium cho thành viên. Cùng học, cùng vào phòng Flashback.', chips:['Mã giới thiệu','Ưu đãi Premium'], href:'https://iqx.vn/'}
+    ], preview:'cong-dong'}
+];
+
+function previewHTML(kind){
+  if (kind === 'hoc') return `
+    <div class="m-head"><b>Học viện</b><span class="m-sub num">12 / 97 bài</span></div>
+    <div class="m-prog"><i style="width:12.4%"></i></div>
+    <div style="margin-top:14px">
+      <div class="m-row"><span><b>Chương 1 · Nền tảng</b></span><span class="m-sub num">10/10</span></div>
+      <div class="m-row"><span><b>Chương 2 · Phương pháp kỹ thuật</b></span><span class="m-sub num">2/10</span></div>
+      <div class="m-row"><span>Biểu đồ nến</span><span class="m-btn">Học bài</span></div>
+      <div class="m-row"><span>Hỗ trợ và kháng cự</span><span class="m-btn alt">Xem lại</span></div>
+      <div class="m-row"><span>RSI</span><span class="m-btn">Học bài</span></div>
+    </div>
+    <div class="m-head" style="margin-top:14px"><b>Candle Dojo</b><span class="m-sub">Đai vàng · 3 sao</span></div>
+    <div class="m-belts"><i style="background:var(--fg-2)"></i><i style="background:var(--gold)"></i><i></i><i></i><i></i></div>`;
+  if (kind === 'choi') return `
+    <div class="m-head"><b>Shop linh thú</b><span class="chip gold num">2.100 xu</span></div>
+    <div class="m-mascots">${MASCOTS.map(m=>`<div class="m-mascot"><img src="assets/${m.id}.webp" alt="" loading="lazy"><b>${m.name}</b><span>${m.layer}</span></div>`).join('')}</div>
+    <div class="m-head" style="margin-top:18px"><b>Sảnh Flashback</b><span class="m-sub">3 phòng đang chờ</span></div>
+    <div class="m-row"><span>Phòng #482917 · 4/6 người</span><span class="m-btn">Vào phòng</span></div>
+    <div class="m-row"><span>Phòng #105338 · 2/6 người</span><span class="m-btn">Vào phòng</span></div>
+    <div class="m-row"><span>Chơi một mình, không cược</span><span class="m-btn alt">Bắt đầu</span></div>`;
+  if (kind === 'thuc-hanh') return `
+    <div class="m-head"><b>VNINDEX</b><span class="m-sub">1 ngày · Nến</span></div>
+    ${miniChartSVG()}
+    <div class="m-order">
+      <div><span class="m-sub">Tiền mặt</span><b class="num">84.250.000đ</b></div>
+      <div><span class="m-sub">Lãi/lỗ tạm tính</span><b class="num" style="color:var(--up)">+1,82%</b></div>
+    </div>
+    <div class="m-order">
+      <div style="background:color-mix(in oklab, var(--up) 12%, var(--surface)); text-align:center"><b style="color:var(--up)">Đặt lệnh mua</b></div>
+      <div style="background:color-mix(in oklab, var(--down) 12%, var(--surface)); text-align:center"><b style="color:var(--down)">Đặt lệnh bán</b></div>
+    </div>`;
+  return `
+    <div class="m-head"><b>SACO nhận định hôm nay</b><span class="m-sub">3 bài</span></div>
+    <div class="m-post"><div class="who"><i></i>SACO · Chuyên gia</div><p>Thanh khoản cải thiện ở nhóm ngân hàng. Theo dõi phản ứng tại vùng kháng cự gần nhất trước khi tăng tỷ trọng.</p></div>
+    <div class="m-post"><div class="who"><i></i>SACO · Chuyên gia</div><p>Nhóm thép giữ nền tích lũy. Ưu tiên quản trị rủi ro, đặt cắt lỗ rõ ràng.</p></div>
+    <div class="m-chat"><span>Có ai vào phòng Flashback không?</span><span class="me">Mình vào, ID 482917 nhé</span></div>`;
+}
+function miniChartSVG(){
+  let s = 7, r = () => (s = (s*16807)%2147483647)/2147483647, v = 50, out = '';
+  for (let i=0;i<28;i++){ const o=v, c=v+(r()-0.45)*8; const h=Math.max(o,c)+r()*3, l=Math.min(o,c)-r()*3; const x=10+i*11, y=k=>150-k*1.6; const up=c>=o;
+    out += `<line x1="${x}" x2="${x}" y1="${y(h)}" y2="${y(l)}" stroke="var(--${up?'up':'down'})" stroke-width="1"/><rect x="${x-3.5}" y="${y(Math.max(o,c))}" width="7" height="${Math.max(1,Math.abs(c-o)*1.6)}" fill="var(--${up?'up':'down'})" rx="1"/>`; v=c; }
+  return `<svg class="m-chart" viewBox="0 0 320 130" role="img" aria-label="Biểu đồ nến minh họa">${out}</svg>`;
+}
+
+const tabsEl = $('#tabs'), panelsEl = $('#panels');
+tabsEl.innerHTML = GROUPS.map((g,i)=>`<button class="tab" role="tab" id="tab-${g.id}" aria-controls="panel-${g.id}" aria-selected="${i===0}" tabindex="${i===0?0:-1}">${ic(g.icon)}${g.label}</button>`).join('');
+panelsEl.innerHTML = GROUPS.map((g,i)=>`
+  <div class="panel" role="tabpanel" id="panel-${g.id}" aria-labelledby="tab-${g.id}" ${i===0?'':'hidden'}>
+    <div class="panel-copy">
+      <h3>${g.title}</h3><p>${g.lede}</p>
+      <div class="plist">${g.items.map(it=>`
+        <a class="pitem" href="${it.href}" ${it.href.startsWith('#')?'':'target="_blank" rel="noopener"'}>
+          <span class="ic">${ic(it.icon)}</span>
+          <span><h4>${it.name}${it.gold?' <span class="chip gold">Nổi bật</span>':''}</h4><p>${it.desc}</p>
+          <span class="chips">${it.chips.map(c=>`<span class="chip">${c}</span>`).join('')}</span></span>
+        </a>`).join('')}</div>
+    </div>
+    <div class="stage s-${g.id}">
+      <img class="stage-mascot" src="assets/${g.mascot}.webp" alt="" loading="lazy">
+      <div class="preview" aria-label="Xem trước giao diện ${g.label}">
+        <div class="preview-bar"><i></i><i></i><i></i><span>iqx.vn · ${g.label}</span></div>
+        <div class="preview-body">${previewHTML(g.preview)}</div>
+        <p class="slot">${ic('image')}Ô xem trước: thay bằng ảnh chụp hoặc video thật của sản phẩm</p>
+      </div>
+    </div>
+  </div>`).join('');
+
+function selectTab(id, focus){
+  GROUPS.forEach(g=>{ const t=$('#tab-'+g.id), p=$('#panel-'+g.id), on=g.id===id;
+    t.setAttribute('aria-selected', String(on)); t.tabIndex = on?0:-1; p.hidden = !on; if(on&&focus) t.focus(); });
+  try{ localStorage.setItem('iqx-tab', id); }catch(e){}
+}
+tabsEl.addEventListener('click', e => { const b=e.target.closest('.tab'); if(b) selectTab(b.id.slice(4)); });
+tabsEl.addEventListener('keydown', e => {
+  const ids = GROUPS.map(g=>g.id); const cur = ids.indexOf(document.activeElement.id.slice(4)); if (cur<0) return;
+  let n = null; if (e.key==='ArrowRight') n=(cur+1)%ids.length; if (e.key==='ArrowLeft') n=(cur-1+ids.length)%ids.length; if (e.key==='Home') n=0; if (e.key==='End') n=ids.length-1;
+  if (n!==null){ e.preventDefault(); selectTab(ids[n], true); }
+});
+document.querySelectorAll('[data-tab]').forEach(a => a.addEventListener('click', () => selectTab(a.dataset.tab)));
+try{ const saved = localStorage.getItem('iqx-tab'); if (saved && GROUPS.some(g=>g.id===saved)) selectTab(saved); }catch(e){}
+
+/* ---------- Journey ---------- */
+const LEVELS = [
+  {name:'Nhập môn', skill:'Làm quen với một vòng mua, theo dõi và bán cổ phiếu.', tasks:['Đặt lệnh đầu tiên, nắm giữ và theo dõi','Bán và hoàn thành kết sổ đầu tiên']},
+  {name:'Học việc', skill:'Mỗi quyết định mua đều bắt đầu từ một kế hoạch.', tasks:['Lệnh đầu tiên có kế hoạch','Trải nghiệm đủ 4 lý do mua','3 lệnh được AI ủng hộ','10 lệnh thực chiến']},
+  {name:'Kỷ luật', skill:'Xác định cắt lỗ và chốt lời trước khi đặt lệnh.', tasks:['10 lệnh có cắt lỗ và chốt lời']},
+  {name:'Bản lĩnh', skill:'Phân bổ vốn theo khẩu vị rủi ro và mức độ tự tin.', tasks:['Thực hành quản lý vốn qua 10 lệnh','Trải nghiệm đủ 3 mức tự tin']},
+  {name:'Thuần thục', skill:'Đọc đủ bốn lớp thông tin trước khi quyết định.', tasks:['10 lệnh đọc đủ 4 lớp: kỹ thuật, dòng tiền, nội bộ, tin tức']},
+  {name:'Lão luyện', skill:'Chủ động tìm cơ hội và theo dõi trước khi mua.', tasks:['Săn 10 mã vào danh sách theo dõi','Mua 5 mã từ danh sách đã săn']},
+  {name:'Bậc thầy', skill:'Nhận diện mâu thuẫn và hành động nhất quán.', tasks:['3 lần xử lý mâu thuẫn nhất quán','Tốt nghiệp và mở khóa linh thú của riêng bạn']}
+];
+const lvEl = $('#levels'), lvD = $('#lvDetail');
+lvEl.innerHTML = LEVELS.map((l,i)=>`<button type="button" class="lv" aria-pressed="${i===0}" data-i="${i}"><small>Cấp ${i}</small><b>${l.name}</b></button>`).join('');
+function showLevel(i){
+  lvEl.querySelectorAll('.lv').forEach(b=>b.setAttribute('aria-pressed', String(+b.dataset.i===i)));
+  const l = LEVELS[i], m = MASCOTS[i % MASCOTS.length];
+  lvD.innerHTML = `<div><span class="eyebrow">Cấp ${i} · ${l.name}</span><h3 style="margin-top:8px">${l.skill}</h3><ul>${l.tasks.map(t=>`<li>${ic('check')}${t}</li>`).join('')}</ul></div>
+    <div class="egg"><img src="assets/${i===6?'thanh-long':m.id}.webp" alt="" loading="lazy">${i===6?'Mở khóa linh thú':'Đồng hành cùng bạn'}</div>`;
+}
+lvEl.addEventListener('click', e => { const b=e.target.closest('.lv'); if(b) showLevel(+b.dataset.i); });
+showLevel(0);
+
+/* ---------- Market board (minh họa) ---------- */
+const STOCKS = [['FPT',128.5],['VCB',92.3],['HPG',27.6],['MWG',63.4],['VNM',61.2],['SSI',33.8],['TCB',24.9],['MBB',23.7],['ACB',25.4],['VHM',41.5]];
+let seed = 42; const rnd = () => (seed = (seed*16807)%2147483647)/2147483647;
+const live = STOCKS.map(([s,ref])=>({s, ref, p: +(ref*(1+(rnd()-0.5)*0.03)).toFixed(2), v: Math.round(200+rnd()*4000)*100}));
+const IDX = [{n:'VN-Index', ref:1734.75, p:1734.93},{n:'VN30', ref:1882.1, p:1879.4},{n:'HNX-Index', ref:248.6, p:249.3}];
+function cls(p, ref){ return p>ref?'u':p<ref?'d':'r'; }
+function renderBoard(flash){
+  $('#board').innerHTML = live.map((r,i)=>{ const ch=r.p-r.ref, c=cls(r.p,r.ref), f = flash===i ? (ch>=0?' flash-u':' flash-d') : '';
+    return `<tr><td>${r.s}</td><td class="r">${fmt(r.ref,2)}</td><td class="${c}${f}">${fmt(r.p,2)}</td><td class="${c}">${ch>0?'+':''}${fmt(ch,2)}</td><td class="${c}">${ch>0?'+':''}${fmt(ch/r.ref*100,2)}%</td><td>${fmt(r.v)}</td></tr>`; }).join('');
+  $('#idxRow').innerHTML = IDX.map(x=>{ const ch=x.p-x.ref, c=cls(x.p,x.ref); return `<div class="idx"><small>${x.n}</small><b>${fmt(x.p,2)}</b><span class="board"><span class="${c}">${ch>0?'+':''}${fmt(ch,2)} (${ch>0?'+':''}${fmt(ch/x.ref*100,2)}%)</span></span></div>`; }).join('');
+}
+renderBoard();
+function tickBoard(){
+  const i = Math.floor(rnd()*live.length), r = live[i];
+  const step = r.ref < 50 ? 0.05 : 0.1;
+  r.p = Math.min(r.ref*1.07, Math.max(r.ref*0.93, +(r.p + (rnd()<0.5?-1:1)*step*Math.ceil(rnd()*3)).toFixed(2)));
+  r.v += Math.round(rnd()*50)*100;
+  IDX.forEach(x=> x.p = +(x.p + (rnd()-0.5)*x.ref*0.0006).toFixed(2));
+  renderBoard(i);
+  const t = document.querySelectorAll('#tape .tk');
+  buildTape();
+}
+function buildTape(){
+  const items = live.map(r=>{ const ch=(r.p-r.ref)/r.ref*100, c=ch>=0?'u':'d'; return `<span class="tk"><b>${r.s}</b><span>${fmt(r.p,2)}</span><span class="${c}">${ch>0?'+':''}${fmt(ch,2)}%</span></span>`; }).join('')
+    + IDX.map(x=>{ const ch=(x.p-x.ref)/x.ref*100, c=ch>=0?'u':'d'; return `<span class="tk"><b>${x.n}</b><span>${fmt(x.p,2)}</span><span class="${c}">${ch>0?'+':''}${fmt(ch,2)}%</span></span>`; }).join('');
+  $('#tape').innerHTML = items + items;
+}
+buildTape();
+if (!RM) setInterval(()=>{ if(!document.hidden) tickBoard(); }, 1800);
+
+const EVENTS = [
+  {d:'19', m:'Th11', t:'Đáo hạn hợp đồng tương lai VN30F tháng 11', s:'HNX · Thứ Năm tuần thứ ba của tháng', imp:'h'},
+  {d:'06', m:'Th12', t:'Công bố CPI và số liệu kinh tế tháng 11', s:'Cục Thống kê · Dự kiến', imp:'h'},
+  {d:'10', m:'Th12', t:'Quyết định lãi suất của Fed (FOMC)', s:'Hoa Kỳ · Dự kiến', imp:'h'},
+  {d:'12', m:'Th12', t:'Công bố kết quả cơ cấu ETF quý IV', s:'Các quỹ ETF ngoại · Dự kiến', imp:'m'},
+  {d:'15', m:'Th12', t:'Hạn nộp báo cáo quản trị cuối năm', s:'Doanh nghiệp niêm yết · Minh họa', imp:'m'}
+];
+$('#cal').innerHTML = EVENTS.map(e=>`<li><div class="d"><b>${e.d}</b><span>${e.m}</span></div><div><h4>${e.t}<span class="imp ${e.imp}">${e.imp==='h'?'Cao':'Vừa'}</span></h4><p>${e.s}</p></div></li>`).join('');
+
+/* ---------- Flashback simulation ---------- */
+const anchors = [[0,1380],[4,1430],[8,1462],[13,1492],[14,1525],[16,1440],[18,1472],[20,1500],[23,1492],[25,1520],[27,1460],[30,1290],[32,1182],[34,1240],[37,1205],[39,1175],[42,1250],[44,1282],[47,1240],[50,1132],[53,1030],[56,960],[58,912],[60,1040],[62,1052],[63,1007]];
+function interp(i){ for(let k=0;k<anchors.length-1;k++){ const [a,va]=anchors[k],[b,vb]=anchors[k+1]; if(i>=a&&i<=b) return va+(vb-va)*(i-a)/(b-a||1); } return anchors[anchors.length-1][1]; }
+let fs = 11; const fr = () => (fs = (fs*48271)%2147483647)/2147483647;
+const N = 64, PRE = 14, bars = [];
+for (let i=0;i<N;i++){
+  const base = interp(i), c = i===N-1 ? 1007 : base*(1+(fr()-0.5)*0.022);
+  const o = i===0 ? c*0.995 : bars[i-1].c*(1+(fr()-0.5)*0.008);
+  const h = Math.max(o,c)*(1+fr()*0.012), l = Math.min(o,c)*(1-fr()*0.012);
+  bars.push({o,h,l,c});
+}
+const C = bars.map(b=>b.c);
+const ma = (i,n)=>{ let s=0,k=0; for(let j=Math.max(0,i-n+1);j<=i;j++){s+=C[j];k++;} return s/k; };
+
+// Mỗi linh thú một phong cách chơi
+const PLAYERS = [
+  {m:MASCOTS[0], style:'Theo xu hướng MA', decide:(i,pos)=> ma(i,4) > ma(i,10) ? 1 : 0},
+  {m:MASCOTS[1], style:'Cắt lỗ 8%, vào lại khi bật lên', state:{peak:0, out:false}, decide:function(i,pos){
+     const st=this.state; if (pos>0){ st.peak=Math.max(st.peak,C[i]); if (C[i] < st.peak*0.92){ st.out=true; return 0; } return pos; }
+     if (C[i] > Math.max(C[i-1],C[i-2],C[i-3]) && C[i] > ma(i,4)){ st.peak=C[i]; return 1; } return 0; }},
+  {m:MASCOTS[3], style:'Phản ứng theo tin tức', decide:(i,pos)=> (i>=26&&i<33)||(i>=48&&i<58) ? 0 : 1},
+  {m:MASCOTS[4], style:'Giữ dài hạn, mua thêm vùng rẻ', decide:(i,pos)=> C[i] < 1000 ? 1 : (pos||0.6)}
+];
+function simulate(){
+  return PLAYERS.map(p=>{
+    if (p.state) p.state = {peak:0, out:false};
+    let cash = 100, sh = 0, pos = 0; const eq = [], acts = [];
+    for (let i=PRE;i<N;i++){
+      const target = i===PRE ? (p.decide.call(p,i,0) || 1) : p.decide.call(p,i,pos);
+      if (Math.abs(target-pos) > 0.01){
+        const val = cash + sh*C[i]; const want = val*target;
+        sh = want / C[i]; cash = val - want;
+        acts[i] = target>pos ? (target>=1?'mua toàn bộ':'mua thêm') : (target===0?'bán toàn bộ':'giảm tỷ trọng');
+        pos = target;
+      }
+      eq[i] = cash + sh*C[i];
+    }
+    return {eq, acts};
+  });
+}
+const SIM = simulate();
+$('#fbTotal').textContent = N-PRE;
+
+const svg = $('#fbChart'), W=640, H=300, padL=8, padR=48, padT=14, padB=22;
+const lo = 860, hi = 1580;
+const X = i => padL + (i+0.5)*((W-padL-padR)/N), Y = v => padT + (hi-v)/(hi-lo)*(H-padT-padB);
+const bw = (W-padL-padR)/N*0.62;
+function drawChart(upto, reveal){
+  let g = '';
+  [900,1100,1300,1500].forEach(v=>{ g += `<line x1="${padL}" x2="${W-padR}" y1="${Y(v)}" y2="${Y(v)}" stroke="oklch(34% .03 260)" stroke-dasharray="2 4"/><text x="${W-padR+6}" y="${Y(v)+4}" font-size="11" fill="oklch(70% .02 256)" font-family="Space Grotesk, sans-serif">${fmt(v)}</text>`; });
+  g += `<line x1="${X(PRE)-((W-padL-padR)/N)/2}" x2="${X(PRE)-((W-padL-padR)/N)/2}" y1="${padT}" y2="${H-padB}" stroke="oklch(80% .13 82 / .5)" stroke-dasharray="3 3"/><text x="${X(PRE)-4}" y="${H-6}" font-size="10.5" text-anchor="end" fill="oklch(80% .13 82)">Xem trước</text><text x="${X(PRE)+2}" y="${H-6}" font-size="10.5" fill="oklch(80% .13 82)">Bắt đầu chơi</text>`;
+  for (let i=0;i<=upto;i++){
+    const b=bars[i], up=b.c>=b.o, col = up?'oklch(76% .16 150)':'oklch(70% .18 25)';
+    g += `<line x1="${X(i)}" x2="${X(i)}" y1="${Y(b.h)}" y2="${Y(b.l)}" stroke="${col}" stroke-width="1.2"/><rect x="${X(i)-bw/2}" y="${Y(Math.max(b.o,b.c))}" width="${bw}" height="${Math.max(1.2, Math.abs(Y(b.o)-Y(b.c)))}" fill="${col}" rx="1"/>`;
+  }
+  if (upto>=4){ let d=''; for(let i=3;i<=upto;i++) d += (i===3?'M':'L')+X(i).toFixed(1)+' '+Y(ma(i,10)).toFixed(1)+' '; g += `<path d="${d}" fill="none" stroke="oklch(72% .14 257.8)" stroke-width="1.5" opacity=".85"/>`; }
+  if (reveal){
+    const ann = [[25,'04/2022: siết thao túng, trái phiếu DN'],[39,'06–09: Fed tăng lãi suất mạnh'],[50,'10/2022: lãi suất trong nước tăng'],[58,'15/11: đáy quanh 911 điểm']];
+    ann.forEach(([i,t],k)=>{ const yy = 30 + k*18; g += `<circle cx="${X(i)}" cy="${Y(C[i])}" r="4" fill="oklch(86% .14 85)"/><line x1="${X(i)}" x2="${X(i)}" y1="${Y(C[i])}" y2="${yy+4}" stroke="oklch(86% .14 85 / .5)"/><text x="${X(i)+6}" y="${yy}" font-size="11" fill="oklch(92% .06 85)">${t}</text>`; });
+  }
+  svg.innerHTML = g;
+}
+function avatar(m){ return `assets/${m.id}.webp`; }
+function renderBoardFB(i){
+  const rows = PLAYERS.map((p,k)=>({p, v: i>=PRE ? SIM[k].eq[i] : 100})).sort((a,b)=>b.v-a.v);
+  $('#fbBoard').innerHTML = rows.map((r,idx)=>{ const pct=r.v-100, c = Math.abs(pct)<0.05?'z':pct>0?'u':'d';
+    return `<li><span class="rk">${idx+1}</span><img src="${avatar(r.p.m)}" alt=""><span><b>${r.p.m.name}</b><small>${r.p.style}</small></span><span class="pct ${c}">${pct>0?'+':''}${fmt(pct,1)}%</span></li>`; }).join('');
+}
+let cur = PRE-1, timer = null, playing = !RM, done = false;
+function log(i){
+  const msgs = PLAYERS.map((p,k)=> SIM[k].acts[i] ? `${p.m.name} ${SIM[k].acts[i]}` : null).filter(Boolean);
+  $('#fbLog').textContent = msgs.length ? `Phiên ${i-PRE+1}: ${msgs.join(' · ')}` : `Phiên ${i-PRE+1}: các người chơi giữ nguyên vị thế`;
+}
+function finish(){
+  done = true; drawChart(N-1, true); renderBoardFB(N-1);
+  $('#fbSym').textContent = 'VNINDEX'; $('#fbStep').textContent = N-PRE;
+  const ranked = PLAYERS.map((p,k)=>({p, v:SIM[k].eq[N-1]})).sort((a,b)=>b.v-a.v);
+  const mk = (C[N-1]/C[PRE]-1)*100, w = ranked[0];
+  $('#fbLesson').textContent = `Cả giai đoạn thị trường đi ${fmt(mk,1)}%. ${w.p.m.name} dẫn đầu với ${w.v-100>0?'+':''}${fmt(w.v-100,1)}%. Cùng một đoạn lịch sử, bốn phong cách cho bốn kết quả rất khác nhau. Flashback giúp bạn biết phong cách của mình sẽ ra sao trước khi thị trường thật trả lời.`;
+  $('#fbReveal').hidden = false;
+  $('#fbLog').textContent = 'Kết thúc ván. Mã và giai đoạn đã được lật mở.';
+  if (playing) timer = setTimeout(restart, 9000);
+}
+function step(){
+  if (cur >= N-1){ finish(); return; }
+  cur++; drawChart(cur, false); renderBoardFB(cur); $('#fbStep').textContent = Math.max(0, cur-PRE+1); log(cur);
+  timer = setTimeout(step, 420);
+}
+function restart(){
+  clearTimeout(timer); done=false; cur = PRE-1; $('#fbReveal').hidden = true; $('#fbSym').textContent='ẩn'; $('#fbStep').textContent='0';
+  drawChart(cur,false); renderBoardFB(cur); $('#fbLog').textContent='Đang xem 14 phiên đầu để đọc bối cảnh…';
+  if (playing) timer = setTimeout(step, 1200);
+}
+function setPlaying(v){
+  playing = v; const b = $('#fbToggle');
+  b.innerHTML = v ? `${ic('pause')}<span>Dừng</span>` : `${ic('play')}<span>Chạy</span>`;
+  b.setAttribute('aria-label', v ? 'Tạm dừng mô phỏng' : 'Chạy mô phỏng');
+  clearTimeout(timer);
+  if (v){ if (done) restart(); else timer = setTimeout(step, 300); }
+}
+$('#fbToggle').addEventListener('click', ()=> setPlaying(!playing));
+$('#fbRestart').addEventListener('click', ()=> { restart(); if(!playing) setPlaying(true); });
+
+if (RM){ finish(); setPlaying(false); }
+else {
+  drawChart(cur,false); renderBoardFB(cur);
+  // Chỉ chạy khi khối Flashback ở trong tầm nhìn
+  let started = false;
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting && !started){ started=true; setPlaying(true);} }); }, {threshold:.25}) : null;
+  if (io) io.observe($('#flashback')); else setPlaying(true);
+  setPlaying(false); $('#fbToggle').innerHTML = `${ic('play')}<span>Chạy</span>`;
+}
+})();
+</script>
